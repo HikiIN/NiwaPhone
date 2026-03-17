@@ -1,26 +1,87 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-red: #B03D3D;
+  --color-red-hover: #8A2D2D;
+  --color-red-dim: rgba(176, 61, 61, 0.15);
+  --font-body: 'Urbanist', sans-serif;
+  --font-display: 'Urbanist', sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: #0f0f10;
+    color: #f0f0f0;
+    font-family: 'Urbanist', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
+
+  select {
+    background-color: #19191c !important;
+    color: #d1d5db !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+  select option {
+    background-color: #19191c !important;
+    color: #f0f0f0 !important;
+  }
+
+  @-moz-document url-prefix() {
+    select {
+      background-color: #19191c !important;
+      color: #f0f0f0 !important;
+    }
+    select option {
+      background-color: #19191c;
+      color: #f0f0f0;
+    }
+  }
+
+  select:focus {
+    outline: none !important;
+    border-color: rgba(176, 61, 61, 0.5) !important;
+    box-shadow: 0 0 0 1px rgba(176, 61, 61, 0.25) !important;
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+  
+  input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.12); border-radius: 99px; }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .hover-zoom-img {
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  .hover-zoom-container:hover .hover-zoom-img {
+    transform: scale(1.15);
+  }
+
+  .animate-fadeUp {
+    animation: fadeUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
 }
