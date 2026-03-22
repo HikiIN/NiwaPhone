@@ -1,15 +1,17 @@
 "use client";
-import { signIn, signOut, useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { LogOut, User, Menu, X } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
+import { useLang } from "./LangContext";
 
 export function Navbar() {
   const { data: session } = useSession();
   const pathname = usePathname();
   const [mobileMenu, setMobileMenu] = useState(false);
+  const { t } = useLang();
 
   const role = (session?.user as any)?.role;
   const isAdmin = role === "Адміністратор";
@@ -17,17 +19,15 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full bg-[#0f0f10]/90 backdrop-blur-xl border-b border-white/[0.06]">
       <div className="max-w-[1200px] mx-auto px-5 h-16 flex items-center justify-between">
-        
+
         <Link href="/" className="flex items-center gap-2">
           <Image src="/logo.svg" alt="NiwaPhone" width={32} height={32} />
-          <span className="font-display text-lg text-white">
-            NiwaPhone
-          </span>
+          <span className="font-display text-lg text-white">NiwaPhone</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-2 absolute left-1/2 -translate-x-1/2">
-          <NavLink href="/" label="Каталог" active={pathname === "/"} />
-          {isAdmin && <NavLink href="/dashboard" label="Дашборд" active={pathname === "/dashboard"} />}
+          <NavLink href="/" label={t.catalog} active={pathname === "/"} />
+          {isAdmin && <NavLink href="/dashboard" label={t.dashboard} active={pathname === "/dashboard"} />}
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
@@ -52,39 +52,43 @@ export function Navbar() {
               </button>
             </div>
           ) : (
-            <button onClick={() => signIn("google")} className="px-5 h-10 rounded-xl bg-red-DEFAULT bg-[#B03D3D] hover:bg-[#8A2D2D] text-white text-sm font-semibold transition-colors">
-              Увійти
-            </button>
+            <Link href="/login" className="px-5 h-10 rounded-xl bg-[#B03D3D] hover:bg-[#8A2D2D] text-white text-sm font-semibold transition-colors flex items-center">
+              {t.signIn}
+            </Link>
           )}
         </div>
 
-        {/* Мобільна кнопка */}
         <button className="md:hidden p-2 text-zinc-400" onClick={() => setMobileMenu(!mobileMenu)}>
           {mobileMenu ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Мобільне меню */}
       {mobileMenu && (
         <div className="md:hidden absolute top-16 left-0 w-full bg-[#19191c] border-b border-white/10 p-5 flex flex-col gap-4 shadow-2xl animate-fadeUp">
-          <Link href="/" onClick={() => setMobileMenu(false)} className={`p-3 rounded-xl ${pathname === "/" ? "bg-white/10 text-white" : "text-zinc-400"}`}>Каталог</Link>
-          {isAdmin && <Link href="/dashboard" onClick={() => setMobileMenu(false)} className={`p-3 rounded-xl ${pathname === "/dashboard" ? "bg-white/10 text-white" : "text-zinc-400"}`}>Дашборд</Link>}
-          
+          <Link href="/" onClick={() => setMobileMenu(false)} className={`p-3 rounded-xl ${pathname === "/" ? "bg-white/10 text-white" : "text-zinc-400"}`}>
+            {t.catalog}
+          </Link>
+          {isAdmin && (
+            <Link href="/dashboard" onClick={() => setMobileMenu(false)} className={`p-3 rounded-xl ${pathname === "/dashboard" ? "bg-white/10 text-white" : "text-zinc-400"}`}>
+              {t.dashboard}
+            </Link>
+          )}
           <hr className="border-white/5 my-2" />
-          
           {session ? (
             <div className="flex items-center justify-between">
               <Link href="/profile" onClick={() => setMobileMenu(false)} className="flex items-center gap-3">
-                 {session.user?.image && <img src={session.user.image} alt="Avatar" className="w-10 h-10 rounded-full" />}
-                 <div>
-                   <p className="text-sm text-white font-medium">{session.user?.name}</p>
-                   <p className="text-xs text-red-DEFAULT">{role}</p>
-                 </div>
+                {session.user?.image && <img src={session.user.image} alt="Avatar" className="w-10 h-10 rounded-full" />}
+                <div>
+                  <p className="text-sm text-white font-medium">{session.user?.name}</p>
+                  <p className="text-xs text-red-DEFAULT">{role}</p>
+                </div>
               </Link>
               <button onClick={() => signOut()} className="p-3 text-zinc-400"><LogOut size={20} /></button>
             </div>
           ) : (
-            <button onClick={() => signIn("google")} className="w-full h-12 rounded-xl bg-[#B03D3D] bg-red-DEFAULT text-white font-semibold">Увійти</button>
+            <Link href="/login" onClick={() => setMobileMenu(false)} className="w-full h-12 rounded-xl bg-[#B03D3D] text-white font-semibold flex items-center justify-center">
+              {t.signIn}
+            </Link>
           )}
         </div>
       )}

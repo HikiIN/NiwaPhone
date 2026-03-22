@@ -13,7 +13,7 @@ const urbanist = Urbanist({
 })
 
 export const metadata: Metadata = {
-  title: 'NiwaPhone — Облік товарів',
+  title: 'NiwaPhone - Облік товарів',
   description: 'Система обліку магазину телефонів',
 }
 

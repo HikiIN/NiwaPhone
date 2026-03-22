@@ -3,14 +3,17 @@
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { User, Mail, Shield, Calendar } from "lucide-react";
+import { User, Mail, Shield, Calendar, Download, Languages, Check } from "lucide-react";
+import { useLang } from "@/components/LangContext";
 
 export default function ProfilePage() {
   const { data: session, status } = useSession();
   const router = useRouter();
+  const { t, lang, toggleLang } = useLang();
+  const [exportState, setExportState] = useState<"idle" | "loading" | "done">("idle");
 
   useEffect(() => {
-    if (status === "unauthenticated") router.push("/");
+    if (status === "unauthenticated") router.push("/login");
   }, [status, router]);
 
   if (status !== "authenticated") {
@@ -24,60 +27,129 @@ export default function ProfilePage() {
   const user = session.user as any;
   const role = user?.role || "Продавець";
   const isAdmin = role === "Адміністратор";
+  const isSeller = role === "Продавець" || isAdmin;
+
+  const handleExport = async () => {
+    if (exportState !== "idle") return;
+    setExportState("loading");
+    try {
+      const res = await fetch("/api/export");
+      if (!res.ok) throw new Error("Export failed");
+      const blob = await res.blob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `niwaphone-db-${new Date().toISOString().slice(0, 10)}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+      setExportState("done");
+      setTimeout(() => setExportState("idle"), 2500);
+    } catch {
+      setExportState("idle");
+    }
+  };
 
   return (
     <main className="max-w-[1200px] mx-auto px-5 py-8">
       <div className="mb-8">
-        <h1 className="font-display font-semibold text-2xl text-white mb-1">Кабінет</h1>
-        <p className="text-sm text-zinc-500">Інформація вашого облікового запису</p>
+        <h1 className="font-display font-semibold text-2xl text-white mb-1">{t.cabinet}</h1>
+        <p className="text-sm text-zinc-500">{t.cabinetSub}</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <div className="bg-zinc-900 border border-white/[0.06] rounded-2xl p-6 flex flex-col items-center text-center">
+
+        <div className="bg-zinc-900 border border-white/[0.06] rounded-2xl p-6 flex flex-col items-center text-center gap-4">
           {session.user?.image ? (
-            <img
-              src={session.user.image}
-              alt="avatar"
-              className="w-20 h-20 rounded-full border-2 border-white/10 mb-4 object-cover"
-            />
+            <img src={session.user.image} alt="avatar" className="w-20 h-20 rounded-full border-2 border-white/10 object-cover" />
           ) : (
-            <div className="w-20 h-20 rounded-full bg-zinc-800 border-2 border-white/10 flex items-center justify-center mb-4">
+            <div className="w-20 h-20 rounded-full bg-zinc-800 border-2 border-white/10 flex items-center justify-center">
               <User size={32} className="text-zinc-500" />
             </div>
           )}
-          <h2 className="font-display font-semibold text-lg text-white mb-1">
-            {session.user?.name || "Користувач"}
-          </h2>
-          <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${
-            isAdmin
-              ? "bg-red-dim text-red-DEFAULT"
-              : "bg-white/[0.06] text-zinc-400"
-          }`}>
-            <Shield size={11} className="mr-1.5" />
-            {role}
-          </span>
+
+          <div>
+            <h2 className="font-display font-semibold text-lg text-white mb-1">
+              {session.user?.name || "Користувач"}
+            </h2>
+            <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${isAdmin ? "bg-red-dim text-red-DEFAULT" : "bg-white/[0.06] text-zinc-400"}`}>
+              <Shield size={11} className="mr-1.5" />
+              {role}
+            </span>
+          </div>
+
+          <div className="w-full flex flex-col gap-2.5 pt-2">
+            <button
+              onClick={handleExport}
+              disabled={exportState !== "idle"}
+              className={`group relative w-full flex items-center gap-3 px-4 py-3 rounded-xl border text-sm font-medium text-left transition-all duration-200 ${
+                exportState === "done"
+                  ? "border-emerald-500/30 bg-emerald-500/[0.08] text-emerald-400"
+                  : exportState === "loading"
+                  ? "border-white/[0.08] bg-white/[0.03] text-zinc-500 cursor-wait"
+                  : "border-white/[0.08] bg-white/[0.03] text-zinc-300 hover:border-red-DEFAULT/40 hover:bg-red-dim hover:text-white cursor-pointer"
+              }`}
+            >
+              <span className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-all duration-200 ${
+                exportState === "done" ? "bg-emerald-500/15 text-emerald-400"
+                : exportState === "loading" ? "bg-white/[0.05] text-zinc-500"
+                : "bg-white/[0.06] text-zinc-400 group-hover:bg-red-dim group-hover:text-red-DEFAULT"
+              }`}>
+                {exportState === "loading" ? (
+                  <div className="w-4 h-4 rounded-full border-2 border-current border-t-transparent animate-spin" />
+                ) : exportState === "done" ? (
+                  <Check size={16} />
+                ) : (
+                  <Download size={16} />
+                )}
+              </span>
+              <span className="flex flex-col items-start min-w-0">
+                <span className="text-sm font-semibold leading-tight">
+                  {exportState === "loading" ? t.exporting : exportState === "done" ? t.exported : t.exportDb}
+                </span>
+                <span className={`text-[11px] leading-tight mt-0.5 ${exportState === "done" ? "text-emerald-500/70" : "text-zinc-600"}`}>
+                  {t.exportDbSub}
+                </span>
+              </span>
+            </button>
+
+            <button
+              onClick={toggleLang}
+              className="group w-full flex items-center gap-3 px-4 py-3 rounded-xl border border-white/[0.08] bg-white/[0.03] text-sm font-medium text-left text-zinc-300 hover:border-sky-500/40 hover:bg-sky-500/[0.06] hover:text-white transition-all duration-200 cursor-pointer"
+            >
+              <span className="w-8 h-8 rounded-lg bg-white/[0.06] flex items-center justify-center shrink-0 text-zinc-400 group-hover:bg-sky-500/15 group-hover:text-sky-400 transition-all duration-200">
+                <Languages size={16} />
+              </span>
+              <span className="flex flex-col items-start min-w-0">
+                <span className="text-sm font-semibold leading-tight">{t.switchLang}</span>
+                <span className="text-[11px] text-zinc-600 leading-tight mt-0.5">{t.switchLangSub}</span>
+              </span>
+              <span className="ml-auto shrink-0 text-[10px] font-bold px-1.5 py-0.5 rounded bg-white/[0.07] text-zinc-500 uppercase tracking-wider">
+                {lang}
+              </span>
+            </button>
+          </div>
         </div>
 
         <div className="lg:col-span-2 bg-zinc-900 border border-white/[0.06] rounded-2xl p-6">
-          <h3 className="font-display font-medium text-sm text-zinc-400 mb-5 uppercase tracking-wider">Дані акаунта</h3>
+          <h3 className="font-display font-medium text-sm text-zinc-400 mb-5 uppercase tracking-wider">{t.accountData}</h3>
           <div className="space-y-4">
-            <InfoRow icon={<User size={15} />} label="Ім'я" value={session.user?.name || "—"} />
-            <InfoRow icon={<Mail size={15} />} label="Email" value={session.user?.email || "—"} />
-            <InfoRow icon={<Shield size={15} />} label="Роль" value={role} />
-            <InfoRow icon={<Calendar size={15} />} label="Вхід через" value="Google" />
+            <InfoRow icon={<User size={15} />} label={t.fieldName} value={session.user?.name || "—"} />
+            <InfoRow icon={<Mail size={15} />} label={t.fieldEmail} value={session.user?.email || "—"} />
+            <InfoRow icon={<Shield size={15} />} label={t.fieldRole} value={role} />
+            <InfoRow icon={<Calendar size={15} />} label={t.fieldLoginVia} value="Google" />
           </div>
 
           <div className="mt-8 pt-6 border-t border-white/[0.06]">
-            <h3 className="font-display font-medium text-sm text-zinc-400 mb-4 uppercase tracking-wider">Можливості</h3>
+            <h3 className="font-display font-medium text-sm text-zinc-400 mb-4 uppercase tracking-wider">{t.permissions}</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <PermCard label="Перегляд каталогу" allowed />
-              <PermCard label="Пошук та фільтрація" allowed />
-              <PermCard label="Зміна статусу товару" allowed={isSeller(role)} />
-              <PermCard label="Додавання товарів" allowed={isAdmin} />
-              <PermCard label="Редагування товарів" allowed={isAdmin} />
-              <PermCard label="Видалення товарів" allowed={isAdmin} />
-              <PermCard label="Доступ до дашборду" allowed={isAdmin} />
-              <PermCard label="Аналітика продажів" allowed={isAdmin} />
+              <PermCard label={t.perms.view}      allowed />
+              <PermCard label={t.perms.search}    allowed />
+              <PermCard label={t.perms.status}    allowed={isSeller} />
+              <PermCard label={t.perms.add}       allowed={isAdmin} />
+              <PermCard label={t.perms.edit}      allowed={isAdmin} />
+              <PermCard label={t.perms.delete}    allowed={isAdmin} />
+              <PermCard label={t.perms.dashboard} allowed={isAdmin} />
+              <PermCard label={t.perms.analytics} allowed={isAdmin} />
             </div>
           </div>
         </div>
@@ -86,16 +158,10 @@ export default function ProfilePage() {
   );
 }
 
-function isSeller(role: string) {
-  return role === "Продавець" || role === "Адміністратор";
-}
-
 function InfoRow({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) {
   return (
     <div className="flex items-center gap-4 py-3 border-b border-white/[0.04] last:border-0">
-      <div className="w-8 h-8 rounded-lg bg-white/[0.05] flex items-center justify-center text-zinc-500 shrink-0">
-        {icon}
-      </div>
+      <div className="w-8 h-8 rounded-lg bg-white/[0.05] flex items-center justify-center text-zinc-500 shrink-0">{icon}</div>
       <div className="flex-1 min-w-0">
         <p className="text-[11px] text-zinc-600 mb-0.5 uppercase tracking-wider">{label}</p>
         <p className="text-sm text-zinc-200 truncate">{value}</p>
@@ -106,14 +172,8 @@ function InfoRow({ icon, label, value }: { icon: React.ReactNode; label: string;
 
 function PermCard({ label, allowed }: { label: string; allowed: boolean }) {
   return (
-    <div className={`flex items-center gap-2.5 px-3 py-2.5 rounded-lg border text-sm ${
-      allowed
-        ? "border-emerald-500/20 bg-emerald-500/[0.05] text-emerald-400"
-        : "border-white/[0.05] bg-transparent text-zinc-600"
-    }`}>
-      <span className={`text-base leading-none ${allowed ? "text-emerald-400" : "text-zinc-700"}`}>
-        {allowed ? "✓" : "✕"}
-      </span>
+    <div className={`flex items-center gap-2.5 px-3 py-2.5 rounded-lg border text-sm ${allowed ? "border-emerald-500/20 bg-emerald-500/[0.05] text-emerald-400" : "border-white/[0.05] bg-transparent text-zinc-600"}`}>
+      <span className={`text-base leading-none ${allowed ? "text-emerald-400" : "text-zinc-700"}`}>{allowed ? "✓" : "✕"}</span>
       {label}
     </div>
   );
