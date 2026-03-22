@@ -30,7 +30,6 @@ export default function ProfilePage() {
   const isSeller = role === "Продавець" || isAdmin;
   const isGuest  = role === "Гість";
 
-  // Кольори бейджика по ролі
   const roleBadgeClass = isAdmin
     ? "bg-red-dim text-red-DEFAULT"
     : isSeller
@@ -66,7 +65,7 @@ export default function ProfilePage() {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-        {/* ── Ліва колонка ──────────────────────────────────────────────── */}
+        {/* Ліва колонка */}
         <div className="bg-zinc-900 border border-white/[0.06] rounded-2xl p-6 flex flex-col items-center text-center gap-4">
           {session.user?.image ? (
             <img src={session.user.image} alt="avatar" className="w-20 h-20 rounded-full border-2 border-white/10 object-cover" />
@@ -96,10 +95,8 @@ export default function ProfilePage() {
             </div>
           )}
 
-          {/* ── Кнопки під нікнеймом ─────────────────────────────────── */}
           <div className="w-full flex flex-col gap-2.5 pt-1">
 
-            {/* Вивантаження БД — тільки для продавця та адміна */}
             {(isSeller) && (
               <button
                 onClick={handleExport}
@@ -136,7 +133,6 @@ export default function ProfilePage() {
               </button>
             )}
 
-            {/* Перемикач мови — доступний всім */}
             <button
               onClick={toggleLang}
               className="group w-full flex items-center gap-3 px-4 py-3 rounded-xl border border-white/[0.08] bg-white/[0.03] text-sm font-medium text-left text-zinc-300 hover:border-sky-500/40 hover:bg-sky-500/[0.06] hover:text-white transition-all duration-200 cursor-pointer"
@@ -202,7 +198,6 @@ export default function ProfilePage() {
   );
 }
 
-// ─── Допоміжні компоненти ─────────────────────────────────────────────────────
 function InfoRow({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) {
   return (
     <div className="flex items-center gap-4 py-3 border-b border-white/[0.04] last:border-0">

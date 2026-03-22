@@ -17,7 +17,6 @@ export function Navbar() {
   const isAdmin  = role === "Адміністратор";
   const isGuest  = role === "Гість";
 
-  // Бейджик ролі
   const roleBadgeClass = isAdmin
     ? "bg-red-dim text-red-DEFAULT"
     : isGuest

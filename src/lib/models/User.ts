@@ -14,7 +14,6 @@ const userSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-// Скидаємо кеш моделі (як у Product.ts) щоб новий enum застосувався
 delete (mongoose.models as any).User;
 
 delete (mongoose.models as any).User;

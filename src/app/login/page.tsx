@@ -76,7 +76,6 @@ export default function LoginPage() {
             <div className="flex-1 h-px bg-white/[0.05]" />
           </div>
 
-          {/* Гість */}
           <button
             onClick={handleGuest}
             disabled={loadingGoogle || loadingGuest}

@@ -4,8 +4,6 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 export type Lang = "uk" | "en";
 
-// ─── Весь словник інтерфейсу ──────────────────────────────────────────────────
-// ВАЖЛИВО: тип Record<string,any> щоб уникнути прив'язки до literal strings укр версії
 const i18n: Record<Lang, Translations> = {
   uk: {
     // Navbar
@@ -158,7 +156,6 @@ const i18n: Record<Lang, Translations> = {
   },
 };
 
-// ─── Тип (витягується з об'єкта, не literal strings) ─────────────────────────
 export interface Translations {
   catalog: string;
   dashboard: string;
@@ -221,7 +218,6 @@ export interface Translations {
   };
 }
 
-// ─── Context ──────────────────────────────────────────────────────────────────
 interface LangContextValue {
   lang: Lang;
   t: Translations;
