@@ -2,7 +2,7 @@
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LogOut, User, Menu, X } from "lucide-react";
+import { LogOut, User, Menu, X, Eye } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
 import { useLang } from "./LangContext";
@@ -13,8 +13,16 @@ export function Navbar() {
   const [mobileMenu, setMobileMenu] = useState(false);
   const { t } = useLang();
 
-  const role = (session?.user as any)?.role;
-  const isAdmin = role === "Адміністратор";
+  const role = (session?.user as any)?.role as string | undefined;
+  const isAdmin  = role === "Адміністратор";
+  const isGuest  = role === "Гість";
+
+  // Бейджик ролі
+  const roleBadgeClass = isAdmin
+    ? "bg-red-dim text-red-DEFAULT"
+    : isGuest
+    ? "bg-zinc-800 text-zinc-500"
+    : "bg-amber-500/10 text-amber-400";
 
   return (
     <header className="sticky top-0 z-50 w-full bg-[#0f0f10]/90 backdrop-blur-xl border-b border-white/[0.06]">
@@ -34,7 +42,8 @@ export function Navbar() {
           {session ? (
             <div className="flex items-center gap-3">
               {role && (
-                <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-red-dim text-red-DEFAULT uppercase tracking-wider">
+                <span className={`px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider flex items-center gap-1 ${roleBadgeClass}`}>
+                  {isGuest && <Eye size={10} />}
                   {role}
                 </span>
               )}
@@ -47,7 +56,7 @@ export function Navbar() {
                   </div>
                 )}
               </Link>
-              <button onClick={() => signOut()} className="p-2 rounded-lg text-zinc-500 hover:text-white hover:bg-white/5 transition-colors">
+              <button onClick={() => signOut({ callbackUrl: "/login" })} className="p-2 rounded-lg text-zinc-500 hover:text-white hover:bg-white/5 transition-colors">
                 <LogOut size={18} />
               </button>
             </div>
@@ -80,10 +89,12 @@ export function Navbar() {
                 {session.user?.image && <img src={session.user.image} alt="Avatar" className="w-10 h-10 rounded-full" />}
                 <div>
                   <p className="text-sm text-white font-medium">{session.user?.name}</p>
-                  <p className="text-xs text-red-DEFAULT">{role}</p>
+                  <p className={`text-xs ${isGuest ? "text-zinc-500" : isAdmin ? "text-red-DEFAULT" : "text-amber-400"}`}>{role}</p>
                 </div>
               </Link>
-              <button onClick={() => signOut()} className="p-3 text-zinc-400"><LogOut size={20} /></button>
+              <button onClick={() => signOut({ callbackUrl: "/login" })} className="p-3 text-zinc-400">
+                <LogOut size={20} />
+              </button>
             </div>
           ) : (
             <Link href="/login" onClick={() => setMobileMenu(false)} className="w-full h-12 rounded-xl bg-[#B03D3D] text-white font-semibold flex items-center justify-center">

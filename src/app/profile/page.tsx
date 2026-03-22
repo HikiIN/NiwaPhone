@@ -3,7 +3,7 @@
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { User, Mail, Shield, Calendar, Download, Languages, Check } from "lucide-react";
+import { User, Mail, Shield, Calendar, Download, Languages, Check, Eye } from "lucide-react";
 import { useLang } from "@/components/LangContext";
 
 export default function ProfilePage() {
@@ -25,16 +25,24 @@ export default function ProfilePage() {
   }
 
   const user = session.user as any;
-  const role = user?.role || "Продавець";
-  const isAdmin = role === "Адміністратор";
+  const role: string = user?.role || "Гість";
+  const isAdmin  = role === "Адміністратор";
   const isSeller = role === "Продавець" || isAdmin;
+  const isGuest  = role === "Гість";
+
+  // Кольори бейджика по ролі
+  const roleBadgeClass = isAdmin
+    ? "bg-red-dim text-red-DEFAULT"
+    : isSeller
+    ? "bg-amber-500/10 text-amber-400"
+    : "bg-white/[0.06] text-zinc-500";
 
   const handleExport = async () => {
     if (exportState !== "idle") return;
     setExportState("loading");
     try {
       const res = await fetch("/api/export");
-      if (!res.ok) throw new Error("Export failed");
+      if (!res.ok) throw new Error();
       const blob = await res.blob();
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
@@ -58,6 +66,7 @@ export default function ProfilePage() {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
+        {/* ── Ліва колонка ──────────────────────────────────────────────── */}
         <div className="bg-zinc-900 border border-white/[0.06] rounded-2xl p-6 flex flex-col items-center text-center gap-4">
           {session.user?.image ? (
             <img src={session.user.image} alt="avatar" className="w-20 h-20 rounded-full border-2 border-white/10 object-cover" />
@@ -68,50 +77,66 @@ export default function ProfilePage() {
           )}
 
           <div>
-            <h2 className="font-display font-semibold text-lg text-white mb-1">
+            <h2 className="font-display font-semibold text-lg text-white mb-1.5">
               {session.user?.name || "Користувач"}
             </h2>
-            <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${isAdmin ? "bg-red-dim text-red-DEFAULT" : "bg-white/[0.06] text-zinc-400"}`}>
-              <Shield size={11} className="mr-1.5" />
+            <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${roleBadgeClass}`}>
+              {isAdmin ? <Shield size={11} className="mr-1.5" /> : isGuest ? <Eye size={11} className="mr-1.5" /> : null}
               {role}
             </span>
           </div>
 
-          <div className="w-full flex flex-col gap-2.5 pt-2">
-            <button
-              onClick={handleExport}
-              disabled={exportState !== "idle"}
-              className={`group relative w-full flex items-center gap-3 px-4 py-3 rounded-xl border text-sm font-medium text-left transition-all duration-200 ${
-                exportState === "done"
-                  ? "border-emerald-500/30 bg-emerald-500/[0.08] text-emerald-400"
-                  : exportState === "loading"
-                  ? "border-white/[0.08] bg-white/[0.03] text-zinc-500 cursor-wait"
-                  : "border-white/[0.08] bg-white/[0.03] text-zinc-300 hover:border-red-DEFAULT/40 hover:bg-red-dim hover:text-white cursor-pointer"
-              }`}
-            >
-              <span className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-all duration-200 ${
-                exportState === "done" ? "bg-emerald-500/15 text-emerald-400"
-                : exportState === "loading" ? "bg-white/[0.05] text-zinc-500"
-                : "bg-white/[0.06] text-zinc-400 group-hover:bg-red-dim group-hover:text-red-DEFAULT"
-              }`}>
-                {exportState === "loading" ? (
-                  <div className="w-4 h-4 rounded-full border-2 border-current border-t-transparent animate-spin" />
-                ) : exportState === "done" ? (
-                  <Check size={16} />
-                ) : (
-                  <Download size={16} />
-                )}
-              </span>
-              <span className="flex flex-col items-start min-w-0">
-                <span className="text-sm font-semibold leading-tight">
-                  {exportState === "loading" ? t.exporting : exportState === "done" ? t.exported : t.exportDb}
-                </span>
-                <span className={`text-[11px] leading-tight mt-0.5 ${exportState === "done" ? "text-emerald-500/70" : "text-zinc-600"}`}>
-                  {t.exportDbSub}
-                </span>
-              </span>
-            </button>
+          {/* Гостьовий банер */}
+          {isGuest && (
+            <div className="w-full px-3 py-2.5 rounded-xl border border-zinc-700/50 bg-zinc-800/50 text-xs text-zinc-500 leading-relaxed text-left">
+              <p className="font-semibold text-zinc-400 mb-0.5">
+                {lang === "uk" ? "Обліковий запис гостя" : "Guest Account"}
+              </p>
+              {t.roleDescription.guest}
+            </div>
+          )}
 
+          {/* ── Кнопки під нікнеймом ─────────────────────────────────── */}
+          <div className="w-full flex flex-col gap-2.5 pt-1">
+
+            {/* Вивантаження БД — тільки для продавця та адміна */}
+            {(isSeller) && (
+              <button
+                onClick={handleExport}
+                disabled={exportState !== "idle"}
+                className={`group w-full flex items-center gap-3 px-4 py-3 rounded-xl border text-sm font-medium text-left transition-all duration-200 ${
+                  exportState === "done"
+                    ? "border-emerald-500/30 bg-emerald-500/[0.08] text-emerald-400"
+                    : exportState === "loading"
+                    ? "border-white/[0.08] bg-white/[0.03] text-zinc-500 cursor-wait"
+                    : "border-white/[0.08] bg-white/[0.03] text-zinc-300 hover:border-red-DEFAULT/40 hover:bg-red-dim hover:text-white cursor-pointer"
+                }`}
+              >
+                <span className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-all duration-200 ${
+                  exportState === "done" ? "bg-emerald-500/15 text-emerald-400"
+                  : exportState === "loading" ? "bg-white/[0.05] text-zinc-500"
+                  : "bg-white/[0.06] text-zinc-400 group-hover:bg-red-dim group-hover:text-red-DEFAULT"
+                }`}>
+                  {exportState === "loading" ? (
+                    <div className="w-4 h-4 rounded-full border-2 border-current border-t-transparent animate-spin" />
+                  ) : exportState === "done" ? (
+                    <Check size={16} />
+                  ) : (
+                    <Download size={16} />
+                  )}
+                </span>
+                <span className="flex flex-col items-start min-w-0">
+                  <span className="text-sm font-semibold leading-tight">
+                    {exportState === "loading" ? t.exporting : exportState === "done" ? t.exported : t.exportDb}
+                  </span>
+                  <span className={`text-[11px] leading-tight mt-0.5 ${exportState === "done" ? "text-emerald-500/70" : "text-zinc-600"}`}>
+                    {t.exportDbSub}
+                  </span>
+                </span>
+              </button>
+            )}
+
+            {/* Перемикач мови — доступний всім */}
             <button
               onClick={toggleLang}
               className="group w-full flex items-center gap-3 px-4 py-3 rounded-xl border border-white/[0.08] bg-white/[0.03] text-sm font-medium text-left text-zinc-300 hover:border-sky-500/40 hover:bg-sky-500/[0.06] hover:text-white transition-all duration-200 cursor-pointer"
@@ -127,20 +152,26 @@ export default function ProfilePage() {
                 {lang}
               </span>
             </button>
+
           </div>
         </div>
 
+        {/* ── Права колонка ─────────────────────────────────────────────── */}
         <div className="lg:col-span-2 bg-zinc-900 border border-white/[0.06] rounded-2xl p-6">
-          <h3 className="font-display font-medium text-sm text-zinc-400 mb-5 uppercase tracking-wider">{t.accountData}</h3>
+          <h3 className="font-display font-medium text-sm text-zinc-400 mb-5 uppercase tracking-wider">
+            {t.accountData}
+          </h3>
           <div className="space-y-4">
-            <InfoRow icon={<User size={15} />} label={t.fieldName} value={session.user?.name || "—"} />
-            <InfoRow icon={<Mail size={15} />} label={t.fieldEmail} value={session.user?.email || "—"} />
-            <InfoRow icon={<Shield size={15} />} label={t.fieldRole} value={role} />
+            <InfoRow icon={<User size={15} />}     label={t.fieldName}     value={session.user?.name || "—"} />
+            <InfoRow icon={<Mail size={15} />}     label={t.fieldEmail}    value={session.user?.email || "—"} />
+            <InfoRow icon={<Shield size={15} />}   label={t.fieldRole}     value={role} />
             <InfoRow icon={<Calendar size={15} />} label={t.fieldLoginVia} value="Google" />
           </div>
 
           <div className="mt-8 pt-6 border-t border-white/[0.06]">
-            <h3 className="font-display font-medium text-sm text-zinc-400 mb-4 uppercase tracking-wider">{t.permissions}</h3>
+            <h3 className="font-display font-medium text-sm text-zinc-400 mb-4 uppercase tracking-wider">
+              {t.permissions}
+            </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <PermCard label={t.perms.view}      allowed />
               <PermCard label={t.perms.search}    allowed />
@@ -151,17 +182,33 @@ export default function ProfilePage() {
               <PermCard label={t.perms.dashboard} allowed={isAdmin} />
               <PermCard label={t.perms.analytics} allowed={isAdmin} />
             </div>
+
+            {/* Блок опису ролей */}
+            <div className="mt-6 pt-5 border-t border-white/[0.04]">
+              <p className="text-[11px] text-zinc-600 uppercase tracking-wider mb-3">
+                {lang === "uk" ? "Рівні доступу" : "Access Levels"}
+              </p>
+              <div className="flex flex-col gap-2">
+                <RoleRow icon={<Eye size={13} />}    color="text-zinc-500"  bg="bg-zinc-800"        label={t.roleGuest}  desc={t.roleDescription.guest}  active={isGuest} />
+                <RoleRow icon={null}                 color="text-amber-400" bg="bg-amber-500/10"    label={t.roleSeller} desc={t.roleDescription.seller} active={isSeller && !isAdmin} />
+                <RoleRow icon={<Shield size={13} />} color="text-red-DEFAULT" bg="bg-red-dim"       label={t.roleAdmin}  desc={t.roleDescription.admin}  active={isAdmin} />
+              </div>
+            </div>
           </div>
         </div>
+
       </div>
     </main>
   );
 }
 
+// ─── Допоміжні компоненти ─────────────────────────────────────────────────────
 function InfoRow({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) {
   return (
     <div className="flex items-center gap-4 py-3 border-b border-white/[0.04] last:border-0">
-      <div className="w-8 h-8 rounded-lg bg-white/[0.05] flex items-center justify-center text-zinc-500 shrink-0">{icon}</div>
+      <div className="w-8 h-8 rounded-lg bg-white/[0.05] flex items-center justify-center text-zinc-500 shrink-0">
+        {icon}
+      </div>
       <div className="flex-1 min-w-0">
         <p className="text-[11px] text-zinc-600 mb-0.5 uppercase tracking-wider">{label}</p>
         <p className="text-sm text-zinc-200 truncate">{value}</p>
@@ -172,9 +219,47 @@ function InfoRow({ icon, label, value }: { icon: React.ReactNode; label: string;
 
 function PermCard({ label, allowed }: { label: string; allowed: boolean }) {
   return (
-    <div className={`flex items-center gap-2.5 px-3 py-2.5 rounded-lg border text-sm ${allowed ? "border-emerald-500/20 bg-emerald-500/[0.05] text-emerald-400" : "border-white/[0.05] bg-transparent text-zinc-600"}`}>
-      <span className={`text-base leading-none ${allowed ? "text-emerald-400" : "text-zinc-700"}`}>{allowed ? "✓" : "✕"}</span>
+    <div className={`flex items-center gap-2.5 px-3 py-2.5 rounded-lg border text-sm ${
+      allowed
+        ? "border-emerald-500/20 bg-emerald-500/[0.05] text-emerald-400"
+        : "border-white/[0.05] bg-transparent text-zinc-600"
+    }`}>
+      <span className={`text-base leading-none ${allowed ? "text-emerald-400" : "text-zinc-700"}`}>
+        {allowed ? "✓" : "✕"}
+      </span>
       {label}
+    </div>
+  );
+}
+
+function RoleRow({
+  icon, color, bg, label, desc, active,
+}: {
+  icon: React.ReactNode;
+  color: string;
+  bg: string;
+  label: string;
+  desc: string;
+  active: boolean;
+}) {
+  return (
+    <div className={`flex items-center gap-3 px-3 py-2.5 rounded-lg border transition-all ${
+      active
+        ? "border-white/[0.1] bg-white/[0.04]"
+        : "border-transparent opacity-40"
+    }`}>
+      <span className={`w-6 h-6 rounded-md ${bg} flex items-center justify-center shrink-0 ${color}`}>
+        {icon ?? <span className="text-[10px] font-bold">S</span>}
+      </span>
+      <div className="flex-1 min-w-0">
+        <p className={`text-xs font-semibold ${active ? "text-zinc-200" : "text-zinc-500"}`}>{label}</p>
+        <p className="text-[11px] text-zinc-600 truncate">{desc}</p>
+      </div>
+      {active && (
+        <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-white/[0.08] text-zinc-400 uppercase tracking-wider shrink-0">
+          {label.slice(0, 1).toUpperCase()}
+        </span>
+      )}
     </div>
   );
 }

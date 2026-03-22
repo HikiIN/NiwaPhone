@@ -4,7 +4,9 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 export type Lang = "uk" | "en";
 
-export const i18n = {
+// ─── Весь словник інтерфейсу ──────────────────────────────────────────────────
+// ВАЖЛИВО: тип Record<string,any> щоб уникнути прив'язки до literal strings укр версії
+const i18n: Record<Lang, Translations> = {
   uk: {
     // Navbar
     catalog: "Каталог",
@@ -51,7 +53,7 @@ export const i18n = {
     connecting: "Підключення...",
     continueGuest: "Продовжити як гість",
     loading: "Завантаження...",
-    guestHint: "Режим гостя дає змогу переглядати каталог без можливості редагувати товари",
+    guestHint: "Режим гостя — тільки перегляд каталогу без редагування",
     rights: "Всі права захищені",
 
     // Головна / фільтри
@@ -68,6 +70,16 @@ export const i18n = {
     edit: "Редагувати",
     markSold: "Позначити проданим",
     deleteProduct: "Видалити товар",
+
+    // Ролі
+    roleGuest: "Гість",
+    roleSeller: "Продавець",
+    roleAdmin: "Адміністратор",
+    roleDescription: {
+      guest: "Перегляд каталогу без редагування",
+      seller: "Перегляд + зміна статусу товарів",
+      admin: "Повний доступ до системи",
+    },
   },
 
   en: {
@@ -116,7 +128,7 @@ export const i18n = {
     connecting: "Connecting...",
     continueGuest: "Continue as Guest",
     loading: "Loading...",
-    guestHint: "Guest mode allows browsing the catalog without editing products",
+    guestHint: "Guest mode — browse catalog only, no editing",
     rights: "All rights reserved",
 
     // Головна / фільтри
@@ -133,11 +145,83 @@ export const i18n = {
     edit: "Edit",
     markSold: "Mark as Sold",
     deleteProduct: "Delete Product",
+
+    // Ролі
+    roleGuest: "Guest",
+    roleSeller: "Seller",
+    roleAdmin: "Administrator",
+    roleDescription: {
+      guest: "Browse catalog without editing",
+      seller: "View + change product status",
+      admin: "Full system access",
+    },
   },
-} as const;
+};
 
-export type Translations = typeof i18n.uk;
+// ─── Тип (витягується з об'єкта, не literal strings) ─────────────────────────
+export interface Translations {
+  catalog: string;
+  dashboard: string;
+  signIn: string;
+  systemActive: string;
+  dbChecking: string;
+  dbOnline: string;
+  dbOffline: string;
+  madeBy: string;
+  cabinet: string;
+  cabinetSub: string;
+  accountData: string;
+  fieldName: string;
+  fieldEmail: string;
+  fieldRole: string;
+  fieldLoginVia: string;
+  permissions: string;
+  exportDb: string;
+  exportDbSub: string;
+  switchLang: string;
+  switchLangSub: string;
+  exporting: string;
+  exported: string;
+  perms: {
+    view: string;
+    search: string;
+    status: string;
+    add: string;
+    edit: string;
+    delete: string;
+    dashboard: string;
+    analytics: string;
+  };
+  loginSubtitle: string;
+  loginSection: string;
+  signInGoogle: string;
+  connecting: string;
+  continueGuest: string;
+  loading: string;
+  guestHint: string;
+  rights: string;
+  searchPlaceholder: string;
+  filterAll: string;
+  filterInStock: string;
+  filterSold: string;
+  addProduct: string;
+  nothingFound: string;
+  inStock: string;
+  sold: string;
+  edit: string;
+  markSold: string;
+  deleteProduct: string;
+  roleGuest: string;
+  roleSeller: string;
+  roleAdmin: string;
+  roleDescription: {
+    guest: string;
+    seller: string;
+    admin: string;
+  };
+}
 
+// ─── Context ──────────────────────────────────────────────────────────────────
 interface LangContextValue {
   lang: Lang;
   t: Translations;

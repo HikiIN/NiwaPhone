@@ -5,10 +5,17 @@ const userSchema = new mongoose.Schema(
     email: { type: String, required: true, unique: true },
     name:  { type: String },
     image: { type: String },
-    role:  { type: String, enum: ["Продавець", "Адміністратор"], default: "Продавець" },
+    role:  {
+      type: String,
+      enum: ["Гість", "Продавець", "Адміністратор"],
+      default: "Гість",
+    },
   },
   { timestamps: true }
 );
 
-export const User =
-  mongoose.models.User || mongoose.model("User", userSchema);
+// Скидаємо кеш моделі (як у Product.ts) щоб новий enum застосувався
+delete (mongoose.models as any).User;
+
+delete (mongoose.models as any).User;
+export const User = mongoose.model("User", userSchema);

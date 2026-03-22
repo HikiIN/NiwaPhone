@@ -13,29 +13,40 @@ const handler = NextAuth({
   callbacks: {
     async signIn({ user }) {
       await connectDB();
-      const existing = await User.findOne({ email: user.email });
+      const email = user.email ?? undefined;
+      const existing = await User.findOne({ email });
+
       if (!existing) {
         await User.create({
-          email: user.email,
-          name:  user.name,
-          image: user.image,
-          role:  "Продавець",
+          email,
+          name:  user.name  ?? undefined,
+          image: user.image ?? undefined,
+          role:  "Гість",
         });
       } else if (existing.image !== user.image) {
-        await User.updateOne({ email: user.email }, { image: user.image });
+        await User.updateOne({ email }, { image: user.image ?? undefined });
       }
+
       return true;
     },
+
     async session({ session }) {
       await connectDB();
-      const dbUser = await User.findOne({ email: session.user?.email });
+      const email = session.user?.email ?? undefined;
+      const dbUser = await User.findOne({ email });
+
       if (dbUser && session.user) {
         (session.user as any).role = dbUser.role;
         (session.user as any).id   = dbUser._id.toString();
         session.user.image = dbUser.image;
       }
+
       return session;
     },
+  },
+
+  pages: {
+    signIn: "/login",
   },
 });
 
