@@ -12,7 +12,7 @@ import type { IProduct } from "@/components/ProductCard";
 
 const BRAND_COLORS: Record<string, string> = {
   Apple: "#B03D3D", Samsung: "#2563eb", Google: "#16a34a",
-  OnePlus: "#ea580c", Xiaomi: "#7c3aed", Sony: "#0891b2",
+  OnePlus: "#ea580c", Xiaomi: "#7c3aed", Nothing: "#0891b2",
 };
 
 function getBrandColor(brand: string) {

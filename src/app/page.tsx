@@ -8,7 +8,7 @@ import { ProductViewModal } from "@/components/ProductViewModal";
 import { useToast } from "@/components/Toast";
 import { useConfirm } from "@/components/ConfirmDialog";
 
-const BRANDS = ["Всі", "Apple", "Samsung", "Google", "OnePlus", "Xiaomi", "Sony", "Motorola"];
+const BRANDS = ["Всі", "Apple", "Samsung", "Google", "OnePlus", "Xiaomi", "Nothing", "Motorola"];
 
 function StyledSelect({
   value,

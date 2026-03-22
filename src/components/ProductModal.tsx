@@ -10,7 +10,7 @@ interface Props {
   onSave: (data: Partial<IProduct>) => Promise<void>;
 }
 
-const BRANDS = ["Apple", "Samsung", "Google", "OnePlus", "Xiaomi", "Sony", "Motorola", "Інший"];
+const BRANDS = ["Apple", "Samsung", "Google", "OnePlus", "Xiaomi", "Nothing", "Motorola", "Інший"];
 const EMPTY = {
   model: "",
   brand: "Apple",
