@@ -9,6 +9,7 @@ import {
 } from "recharts";
 import { TrendingUp, Package, ShoppingBag, Wallet } from "lucide-react";
 import type { IProduct } from "@/components/ProductCard";
+import { useLang } from "@/components/LangContext";
 
 const BRAND_COLORS: Record<string, string> = {
   Apple: "#B03D3D", Samsung: "#2563eb", Google: "#16a34a",
@@ -20,10 +21,13 @@ function getBrandColor(brand: string) {
 }
 
 const MONTHS_UK = ["Січ","Лют","Бер","Кві","Тра","Чер","Лип","Сер","Вер","Жов","Лис","Гру"];
+const MONTHS_EN = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 
 export default function DashboardPage() {
   const { data: session, status } = useSession();
   const router = useRouter();
+  const { t, lang } = useLang();
+
   const [products, setProducts] = useState<IProduct[]>([]);
   const [loading, setLoading]   = useState(true);
 
@@ -44,6 +48,8 @@ export default function DashboardPage() {
 
   if (status !== "authenticated") return null;
 
+  const MONTHS = lang === "en" ? MONTHS_EN : MONTHS_UK;
+
   if (loading) {
     return (
       <main className="max-w-[1200px] mx-auto px-5 py-8">
@@ -59,11 +65,12 @@ export default function DashboardPage() {
     );
   }
 
-  const inStock   = products.filter((p: IProduct) => p.status === "в наявності");
-  const sold      = products.filter((p: IProduct) => p.status === "проданий");
-  const revenue   = sold.reduce((s, p) => s + p.price, 0);
-  const avgPrice  = products.length ?
-    Math.round(products.reduce((s, p) => s + p.price, 0) / products.length) : 0;
+  const inStock  = products.filter(p => p.status === "в наявності");
+  const sold     = products.filter(p => p.status === "проданий");
+  const revenue  = sold.reduce((s, p) => s + p.price, 0);
+  const avgPrice = products.length
+    ? Math.round(products.reduce((s, p) => s + p.price, 0) / products.length)
+    : 0;
 
   const byBrand = Object.entries(
     products.reduce<Record<string, { total: number; sold: number }>>((acc, p) => {
@@ -79,35 +86,49 @@ export default function DashboardPage() {
     d.setMonth(d.getMonth() - (5 - i));
     const m = d.getMonth();
     const y = d.getFullYear();
-    const count = sold.filter((p: IProduct) => {
+    const count = sold.filter(p => {
       if (!p.soldAt) return false;
       const pd = new Date(p.soldAt);
       return pd.getMonth() === m && pd.getFullYear() === y;
     }).length;
-    return { month: MONTHS_UK[m], count };
+    return { month: MONTHS[m], count };
   });
 
-  const topModels = [...products]
-    .sort((a, b) => b.price - a.price)
-    .slice(0, 5);
+  const topModels = [...products].sort((a, b) => b.price - a.price).slice(0, 5);
+
+  // Локалізовані мітки
+  const labels = {
+    inStock:    lang === "uk" ? "В наявності"       : "In Stock",
+    sold:       lang === "uk" ? "Продано"           : "Sold",
+    revenue:    lang === "uk" ? "Виручка"           : "Revenue",
+    avgPrice:   lang === "uk" ? "Сер. ціна"         : "Avg. Price",
+    salesChart: lang === "uk" ? "Продажі (6 місяців)" : "Sales (6 months)",
+    byBrand:    lang === "uk" ? "По брендах"        : "By Brand",
+    top5:       lang === "uk" ? "Топ-5 за ціною"    : "Top 5 by Price",
+    noProducts: lang === "uk" ? "Немає товарів"     : "No products",
+    soldLabel:  lang === "uk" ? "Продано"           : "Sold",
+    totalLabel: lang === "uk" ? "Всього"            : "Total",
+  };
 
   return (
     <main className="max-w-[1200px] mx-auto px-5 py-8">
       <div className="mb-8">
-        <h1 className="font-display font-semibold text-2xl text-white mb-1">Дашборд</h1>
-        <p className="text-sm text-zinc-500">Аналітика магазину в реальному часі</p>
+        <h1 className="font-display font-semibold text-2xl text-white mb-1">{t.dashboard}</h1>
+        <p className="text-sm text-zinc-500">
+          {lang === "uk" ? "Аналітика магазину в реальному часі" : "Real-time store analytics"}
+        </p>
       </div>
 
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-        <MetricCard icon={<Package size={18} />} label="В наявності" value={inStock.length} />
-        <MetricCard icon={<ShoppingBag size={18} />} label="Продано" value={sold.length} accent />
-        <MetricCard icon={<Wallet size={18} />} label="Виручка" value={`${revenue.toLocaleString("uk-UA")} ₴`} />
-        <MetricCard icon={<TrendingUp size={18} />} label="Сер. ціна" value={`${avgPrice.toLocaleString("uk-UA")} ₴`} />
+        <MetricCard icon={<Package size={18} />}    label={labels.inStock}  value={inStock.length} />
+        <MetricCard icon={<ShoppingBag size={18} />} label={labels.sold}    value={sold.length} accent />
+        <MetricCard icon={<Wallet size={18} />}     label={labels.revenue}  value={`${revenue.toLocaleString("uk-UA")} ₴`} />
+        <MetricCard icon={<TrendingUp size={18} />} label={labels.avgPrice} value={`${avgPrice.toLocaleString("uk-UA")} ₴`} />
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
         <div className="lg:col-span-2 bg-[#19191c] border border-white/[0.06] rounded-2xl p-5">
-          <h2 className="font-display font-medium text-sm text-zinc-300 mb-5">Продажі (6 місяців)</h2>
+          <h2 className="font-display font-medium text-sm text-zinc-300 mb-5">{labels.salesChart}</h2>
           <ResponsiveContainer width="100%" height={220}>
             <AreaChart data={salesByMonth} margin={{ top: 5, right: 5, left: -25, bottom: 0 }}>
               <defs>
@@ -123,13 +144,13 @@ export default function DashboardPage() {
                 contentStyle={{ background: "#19191c", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 10, color: "#fff", fontSize: 13 }}
                 cursor={{ stroke: "rgba(255,255,255,0.08)" }}
               />
-              <Area type="monotone" dataKey="count" stroke="#B03D3D" strokeWidth={2} fill="url(#redGrad)" name="Продано" />
+              <Area type="monotone" dataKey="count" stroke="#B03D3D" strokeWidth={2} fill="url(#redGrad)" name={labels.soldLabel} />
             </AreaChart>
           </ResponsiveContainer>
         </div>
 
         <div className="bg-[#19191c] border border-white/[0.06] rounded-2xl p-5">
-          <h2 className="font-display font-medium text-sm text-zinc-300 mb-5">По брендах</h2>
+          <h2 className="font-display font-medium text-sm text-zinc-300 mb-5">{labels.byBrand}</h2>
           <ResponsiveContainer width="100%" height={220}>
             <BarChart data={byBrand} layout="vertical" margin={{ top: 0, right: 10, left: 30, bottom: 0 }}>
               <XAxis type="number" tick={{ fill: "#6b7280", fontSize: 11 }} axisLine={false} tickLine={false} allowDecimals={false} />
@@ -138,8 +159,8 @@ export default function DashboardPage() {
                 contentStyle={{ background: "#19191c", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 10, color: "#fff", fontSize: 13 }}
                 cursor={{ fill: "rgba(255,255,255,0.03)" }}
               />
-              <Bar dataKey="total" name="Всього" radius={[0, 4, 4, 0]}>
-                {byBrand.map((entry) => (
+              <Bar dataKey="total" name={labels.totalLabel} radius={[0, 4, 4, 0]}>
+                {byBrand.map(entry => (
                   <Cell key={entry.brand} fill={getBrandColor(entry.brand)} opacity={0.8} />
                 ))}
               </Bar>
@@ -149,7 +170,7 @@ export default function DashboardPage() {
       </div>
 
       <div className="bg-[#19191c] border border-white/[0.06] rounded-2xl p-5">
-        <h2 className="font-display font-medium text-sm text-zinc-300 mb-4">Топ-5 за ціною</h2>
+        <h2 className="font-display font-medium text-sm text-zinc-300 mb-4">{labels.top5}</h2>
         <div className="space-y-2">
           {topModels.map((p, i) => (
             <div key={p._id} className="flex items-center gap-4 py-2 border-b border-white/[0.04] last:border-0">
@@ -163,7 +184,7 @@ export default function DashboardPage() {
                   ? "bg-emerald-500/10 text-emerald-400"
                   : "bg-zinc-800 text-zinc-500"
               }`}>
-                {p.status}
+                {p.status === "в наявності" ? t.inStock : t.sold}
               </span>
               <span className="font-display font-medium text-sm text-red-DEFAULT whitespace-nowrap">
                 {p.price.toLocaleString("uk-UA")} ₴
@@ -171,7 +192,7 @@ export default function DashboardPage() {
             </div>
           ))}
           {topModels.length === 0 && (
-            <p className="text-sm text-zinc-600 py-4 text-center">Немає товарів</p>
+            <p className="text-sm text-zinc-600 py-4 text-center">{labels.noProducts}</p>
           )}
         </div>
       </div>
@@ -179,7 +200,9 @@ export default function DashboardPage() {
   );
 }
 
-function MetricCard({ icon, label, value, accent }: { icon: React.ReactNode; label: string; value: string | number; accent?: boolean }) {
+function MetricCard({ icon, label, value, accent }: {
+  icon: React.ReactNode; label: string; value: string | number; accent?: boolean;
+}) {
   return (
     <div className="bg-[#19191c] border border-white/[0.06] rounded-xl p-4">
       <div className={`w-8 h-8 rounded-lg flex items-center justify-center mb-3 ${accent ? "bg-red-dim text-red-DEFAULT" : "bg-white/[0.05] text-zinc-400"}`}>

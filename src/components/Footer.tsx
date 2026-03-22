@@ -34,7 +34,7 @@ export function Footer() {
       <div className="max-w-[1200px] mx-auto px-5 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-5">
           <div className="flex items-center gap-2">
-            <Image src="/logo.svg" alt="NiwaPhone" width={22} height={22} className="opacity-60" />
+            <Image src="/logo-wh.svg" alt="NiwaPhone" width={22} height={22} className="opacity-60" />
             <span className="font-display font-bold text-sm text-zinc-500 tracking-wider">NiwaPhone</span>
           </div>
           <div className="w-px h-4 bg-white/10" />
