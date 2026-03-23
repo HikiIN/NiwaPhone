@@ -55,7 +55,6 @@ export default function HomePage() {
   const [loading, setLoading]           = useState(true);
   const [search, setSearch]             = useState("");
   const [statusFilter, setStatusFilter] = useState("all");
-  // Зберігаємо бренд завжди як англійський ключ (або "All") для стабільності фільтра
   const [brandFilter, setBrandFilter]   = useState("All");
   const [modalOpen, setModalOpen]       = useState(false);
   const [editProduct, setEditProduct]   = useState<IProduct | null>(null);
@@ -66,7 +65,6 @@ export default function HomePage() {
     const params = new URLSearchParams();
     if (search) params.set("search", search);
     if (statusFilter !== "all") params.set("status", statusFilter === "in" ? "в наявності" : "проданий");
-    // Бренди крім "All/Всі" — самі назви однакові в обох мовах
     if (brandFilter !== "All") params.set("brand", brandFilter);
 
     try {
@@ -138,14 +136,12 @@ export default function HomePage() {
     setViewProduct(null);
   };
 
-  // Опції статусу — локалізовані
   const statusOptions = [
     { value: "all",  label: t.filterAll },
     { value: "in",   label: t.filterInStock },
     { value: "sold", label: t.filterSold },
   ];
 
-  // Опції брендів: value завжди англійський (стабільний ключ), label — локалізований
   const brandOptions = BRANDS_EN.map((en, i) => ({
     value: en,
     label: lang === "en" ? BRANDS_EN[i] : BRANDS_UK[i],
@@ -155,7 +151,7 @@ export default function HomePage() {
     <main className="max-w-[1200px] mx-auto px-5 py-8">
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
         <div>
-          <h1 className="font-display font-bold text-3xl text-white mb-2">{t.catalog}</h1>
+          <h1 className="font-display text-2xl text-white mb-2">{t.catalog}</h1>
           <p className="text-sm text-zinc-400">
             {lang === "uk" ? "Керуйте асортиментом магазину NiwaPhone" : "Manage NiwaPhone store inventory"}
           </p>

@@ -59,7 +59,7 @@ export default function ProfilePage() {
   return (
     <main className="max-w-[1200px] mx-auto px-5 py-8">
       <div className="mb-8">
-        <h1 className="font-display font-semibold text-2xl text-white mb-1">{t.cabinet}</h1>
+        <h1 className="font-display text-2xl text-white mb-1">{t.cabinet}</h1>
         <p className="text-sm text-zinc-500">{t.cabinetSub}</p>
       </div>
 
@@ -152,7 +152,6 @@ export default function ProfilePage() {
           </div>
         </div>
 
-        {/* ── Права колонка ─────────────────────────────────────────────── */}
         <div className="lg:col-span-2 bg-zinc-900 border border-white/[0.06] rounded-2xl p-6">
           <h3 className="font-display font-medium text-sm text-zinc-400 mb-5 uppercase tracking-wider">
             {t.accountData}
@@ -179,7 +178,6 @@ export default function ProfilePage() {
               <PermCard label={t.perms.analytics} allowed={isAdmin} />
             </div>
 
-            {/* Блок опису ролей */}
             <div className="mt-6 pt-5 border-t border-white/[0.04]">
               <p className="text-[11px] text-zinc-600 uppercase tracking-wider mb-3">
                 {lang === "uk" ? "Рівні доступу" : "Access Levels"}
