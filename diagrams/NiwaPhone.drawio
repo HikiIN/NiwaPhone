@@ -730,6 +730,11 @@
             </Array>
           </mxGeometry>
         </mxCell>
+        <mxCell id="OifXnCv9cBM05Bx1JzBg-21" connectable="0" parent="OifXnCv9cBM05Bx1JzBg-10" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;div&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;12 Перехід на&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;вкладку&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.4429" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
         <mxCell id="OifXnCv9cBM05Bx1JzBg-18" edge="1" parent="1" source="OifXnCv9cBM05Bx1JzBg-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;endArrow=none;endFill=0;">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="365" y="190" as="targetPoint" />
