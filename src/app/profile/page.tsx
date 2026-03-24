@@ -88,7 +88,7 @@ export default function ProfilePage() {
   return (
     <main className="max-w-[1200px] mx-auto px-5 py-8">
       <div className="mb-8">
-        <h1 className="font-display font-semibold text-2xl text-white mb-1">{t.cabinet}</h1>
+        <h1 className="font-display text-2xl text-white mb-1">{t.cabinet}</h1>
         <p className="text-sm text-zinc-500">{t.cabinetSub}</p>
       </div>
 
