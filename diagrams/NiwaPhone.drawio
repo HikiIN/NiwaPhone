@@ -699,10 +699,13 @@
     </mxGraphModel>
   </diagram>
   <diagram id="vKLK17AV0ipE8XB5jeQg" name="ЛМИ-1">
-    <mxGraphModel dx="679" dy="358" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="815" dy="429" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="OifXnCv9cBM05Bx1JzBg-23" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="320" width="660" x="30" y="160" as="geometry" />
+        </mxCell>
         <mxCell id="OifXnCv9cBM05Bx1JzBg-6" edge="1" parent="1" source="OifXnCv9cBM05Bx1JzBg-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" target="OifXnCv9cBM05Bx1JzBg-2">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
