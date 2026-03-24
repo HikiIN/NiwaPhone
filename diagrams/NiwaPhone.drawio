@@ -699,7 +699,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="vKLK17AV0ipE8XB5jeQg" name="ЛМИ-1">
-    <mxGraphModel dx="570" dy="300" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="679" dy="358" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -728,6 +728,16 @@
             <Array as="points">
               <mxPoint x="568" y="300" />
             </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OifXnCv9cBM05Bx1JzBg-18" edge="1" parent="1" source="OifXnCv9cBM05Bx1JzBg-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;endArrow=none;endFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="365" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OifXnCv9cBM05Bx1JzBg-19" connectable="0" parent="OifXnCv9cBM05Bx1JzBg-18" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1 Авторизація" vertex="1">
+          <mxGeometry relative="1" x="0.0474" y="1" as="geometry">
+            <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OifXnCv9cBM05Bx1JzBg-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Список телефонів&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;(Головний екран)&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;1,2,3,4,5&lt;/font&gt;&lt;/div&gt;" vertex="1">
@@ -769,6 +779,9 @@
         </mxCell>
         <mxCell id="OifXnCv9cBM05Bx1JzBg-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Дашборд&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&amp;nbsp;(Аналітика)&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;12,13,14&lt;/font&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="70" width="150" x="530" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="OifXnCv9cBM05Bx1JzBg-20" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Користувач" vertex="1">
+          <mxGeometry height="30" width="60" x="335" y="160" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
