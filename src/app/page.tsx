@@ -1,7 +1,7 @@
 "use client";
 import { useSession } from "next-auth/react";
 import { useState, useEffect, useCallback } from "react";
-import { Search, Plus, SlidersHorizontal, ChevronDown } from "lucide-react";
+import { Search, Plus, SlidersHorizontal, ChevronDown, ArrowUp } from "lucide-react";
 import { ProductCard, type IProduct } from "@/components/ProductCard";
 import { ProductModal } from "@/components/ProductModal";
 import { ProductViewModal } from "@/components/ProductViewModal";
@@ -37,6 +37,31 @@ function StyledSelect({
       </select>
       <ChevronDown size={14} className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-500 pointer-events-none" />
     </div>
+  );
+}
+
+function ScrollToTop() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > 400);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <button
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      aria-label="Scroll to top"
+      className="fixed bottom-6 right-6 z-50 w-10 h-10 rounded-xl bg-[#19191c] border border-white/[0.08] text-zinc-400 hover:text-white hover:border-white/20 flex items-center justify-center transition-all duration-200"
+      style={{
+        opacity: visible ? 1 : 0,
+        pointerEvents: visible ? "auto" : "none",
+        transform: visible ? "translateY(0)" : "translateY(8px)",
+      }}
+    >
+      <ArrowUp size={16} />
+    </button>
   );
 }
 
@@ -219,6 +244,8 @@ export default function HomePage() {
           onSell={handleSell}
         />
       )}
+
+      <ScrollToTop />
     </main>
   );
 }

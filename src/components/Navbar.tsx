@@ -11,11 +11,11 @@ export function Navbar() {
   const { data: session } = useSession();
   const pathname = usePathname();
   const [mobileMenu, setMobileMenu] = useState(false);
-  const { t } = useLang();
+  const { t, lang } = useLang();
 
-  const role = (session?.user as any)?.role as string | undefined;
-  const isAdmin  = role === "Адміністратор";
-  const isGuest  = role === "Гість";
+  const role    = (session?.user as any)?.role as string | undefined;
+  const isAdmin = role === "Адміністратор";
+  const isGuest = role === "Гість";
 
   const roleBadgeClass = isAdmin
     ? "bg-red-dim text-red-DEFAULT"
@@ -33,8 +33,9 @@ export function Navbar() {
         </Link>
 
         <nav className="hidden md:flex items-center gap-2 absolute left-1/2 -translate-x-1/2">
-          <NavLink href="/" label={t.catalog} active={pathname === "/"} />
-          {isAdmin && <NavLink href="/dashboard" label={t.dashboard} active={pathname === "/dashboard"} />}
+          <NavLink href="/"           label={t.catalog}   active={pathname === "/"} />
+          {isAdmin && <NavLink href="/dashboard"  label={t.dashboard}  active={pathname === "/dashboard"} />}
+          {isAdmin && <NavLink href="/suppliers"  label={lang === "uk" ? "Постачальники" : "Suppliers"} active={pathname === "/suppliers"} />}
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
@@ -79,6 +80,11 @@ export function Navbar() {
           {isAdmin && (
             <Link href="/dashboard" onClick={() => setMobileMenu(false)} className={`p-3 rounded-xl ${pathname === "/dashboard" ? "bg-white/10 text-white" : "text-zinc-400"}`}>
               {t.dashboard}
+            </Link>
+          )}
+          {isAdmin && (
+            <Link href="/suppliers" onClick={() => setMobileMenu(false)} className={`p-3 rounded-xl ${pathname === "/suppliers" ? "bg-white/10 text-white" : "text-zinc-400"}`}>
+              {lang === "uk" ? "Постачальники" : "Suppliers"}
             </Link>
           )}
           <hr className="border-white/5 my-2" />
