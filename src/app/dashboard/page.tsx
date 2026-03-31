@@ -33,12 +33,14 @@ function SalesTable({ products }: { products: IProduct[] }) {
   const { t, lang } = useLang();
   const l = t.salesTable;
 
-  const [search, setSearch]     = useState("");
-  const [yearFilter, setYear]   = useState("all");
-  const [brandFilter, setBrand] = useState("all");
-  const [sortBy, setSort]       = useState<"date" | "price" | "brand">("date");
-  const [sortDir, setSortDir]   = useState<"desc" | "asc">("desc");
-  const [page, setPage]         = useState(1);
+  const [search, setSearch]       = useState("");
+  const [yearFilter, setYear]     = useState("all");
+  const [monthFilter, setMonth]   = useState("all");
+  const [dayFilter, setDay]       = useState("all");
+  const [brandFilter, setBrand]   = useState("all");
+  const [sortBy, setSort]         = useState<"date" | "price" | "brand">("date");
+  const [sortDir, setSortDir]     = useState<"desc" | "asc">("desc");
+  const [page, setPage]           = useState(1);
   const PER_PAGE = 8;
 
   const sold = products.filter(p => p.status === "проданий" && p.soldAt);
@@ -48,7 +50,9 @@ function SalesTable({ products }: { products: IProduct[] }) {
 
   const filtered = useMemo(() => {
     let list = sold;
-    if (yearFilter !== "all") list = list.filter(p => new Date(p.soldAt!).getFullYear() === +yearFilter);
+    if (yearFilter  !== "all") list = list.filter(p => new Date(p.soldAt!).getFullYear() === +yearFilter);
+    if (monthFilter !== "all") list = list.filter(p => new Date(p.soldAt!).getMonth()    === +monthFilter);
+    if (dayFilter   !== "all") list = list.filter(p => new Date(p.soldAt!).getDate()     === +dayFilter);
     if (brandFilter !== "all") list = list.filter(p => p.brand === brandFilter);
     if (search) {
       const q = search.toLowerCase();
@@ -61,7 +65,7 @@ function SalesTable({ products }: { products: IProduct[] }) {
       if (sortBy === "brand") diff = a.brand.localeCompare(b.brand);
       return sortDir === "desc" ? -diff : diff;
     });
-  }, [sold, yearFilter, brandFilter, search, sortBy, sortDir]);
+  }, [sold, yearFilter, monthFilter, dayFilter, brandFilter, search, sortBy, sortDir]);
 
   const totalPages = Math.ceil(filtered.length / PER_PAGE);
   const paged = filtered.slice((page-1)*PER_PAGE, page*PER_PAGE);
@@ -71,6 +75,9 @@ function SalesTable({ products }: { products: IProduct[] }) {
     else { setSort(col); setSortDir("desc"); }
     setPage(1);
   };
+
+  const selectCls = "h-9 pl-3 pr-7 rounded-lg border border-white/[0.06] text-xs appearance-none cursor-pointer focus:outline-none";
+  const selectStyle = { background: "#19191c", color: "#a1a1aa" };
 
   const SortBtn = ({ col, label }: { col: typeof sortBy; label: string }) => (
     <button
@@ -86,7 +93,6 @@ function SalesTable({ products }: { products: IProduct[] }) {
 
   return (
     <div className="bg-[#19191c] border border-white/[0.06] rounded-2xl overflow-hidden">
-      {/* Заголовок + фільтри */}
       <div className="p-5 border-b border-white/[0.05]">
         <div className="flex items-center gap-2 mb-4">
           <Filter size={14} className="text-zinc-500" />
@@ -96,7 +102,6 @@ function SalesTable({ products }: { products: IProduct[] }) {
           </span>
         </div>
         <div className="flex flex-wrap gap-2">
-          {/* Пошук */}
           <div className="relative flex-1 min-w-[160px]">
             <Search size={13} className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-600 pointer-events-none" />
             <input
@@ -106,27 +111,33 @@ function SalesTable({ products }: { products: IProduct[] }) {
               className="w-full h-9 pl-8 pr-3 rounded-lg bg-black/20 border border-white/[0.06] text-xs text-white placeholder:text-zinc-600 focus:outline-none focus:border-[#B03D3D]/40 transition-colors"
             />
           </div>
-          {/* Рік */}
           <div className="relative">
-            <select
-              value={yearFilter}
-              onChange={e => { setYear(e.target.value); setPage(1); }}
-              className="h-9 pl-3 pr-7 rounded-lg border border-white/[0.06] text-xs appearance-none cursor-pointer focus:outline-none"
-              style={{ background: "#19191c", color: "#a1a1aa" }}
-            >
+            <select value={yearFilter} onChange={e => { setYear(e.target.value); setPage(1); }} className={selectCls} style={selectStyle}>
               <option value="all">{l.allYears}</option>
               {years.map(y => <option key={y} value={y}>{y}</option>)}
             </select>
             <ChevronDown size={11} className="absolute right-2 top-1/2 -translate-y-1/2 text-zinc-600 pointer-events-none" />
           </div>
-          {/* Бренд */}
           <div className="relative">
-            <select
-              value={brandFilter}
-              onChange={e => { setBrand(e.target.value); setPage(1); }}
-              className="h-9 pl-3 pr-7 rounded-lg border border-white/[0.06] text-xs appearance-none cursor-pointer focus:outline-none"
-              style={{ background: "#19191c", color: "#a1a1aa" }}
-            >
+            <select value={monthFilter} onChange={e => { setMonth(e.target.value); setPage(1); }} className={selectCls} style={selectStyle}>
+              <option value="all">{l.allMonths}</option>
+              {MONTHS_UK.map((m, i) => (
+                <option key={i} value={i}>{lang === "uk" ? m : MONTHS_EN[i]}</option>
+              ))}
+            </select>
+            <ChevronDown size={11} className="absolute right-2 top-1/2 -translate-y-1/2 text-zinc-600 pointer-events-none" />
+          </div>
+          <div className="relative">
+            <select value={dayFilter} onChange={e => { setDay(e.target.value); setPage(1); }} className={selectCls} style={selectStyle}>
+              <option value="all">{l.allDays}</option>
+              {Array.from({ length: 31 }, (_, i) => i + 1).map(d => (
+                <option key={d} value={d}>{d}</option>
+              ))}
+            </select>
+            <ChevronDown size={11} className="absolute right-2 top-1/2 -translate-y-1/2 text-zinc-600 pointer-events-none" />
+          </div>
+          <div className="relative">
+            <select value={brandFilter} onChange={e => { setBrand(e.target.value); setPage(1); }} className={selectCls} style={selectStyle}>
               <option value="all">{l.allBrands}</option>
               {brands.map(b => <option key={b} value={b}>{b}</option>)}
             </select>
@@ -135,7 +146,6 @@ function SalesTable({ products }: { products: IProduct[] }) {
         </div>
       </div>
 
-      {/* Таблиця */}
       <div className="overflow-x-auto">
         <table className="w-full">
           <thead>
@@ -201,7 +211,6 @@ function SalesTable({ products }: { products: IProduct[] }) {
         </table>
       </div>
 
-      {/* Пагінація */}
       {totalPages > 1 && (
         <div className="flex items-center justify-between px-5 py-3 border-t border-white/[0.04]">
           <span className="text-[11px] text-zinc-600">
@@ -308,7 +317,6 @@ export default function DashboardPage() {
         <p className="text-sm text-zinc-500">{dp.analyticsSubtitle}</p>
       </div>
 
-      {/* Метрики */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
         <MetricCard icon={<Package size={18} />}     label={dp.inStock}    value={inStock.length} />
         <MetricCard icon={<ShoppingBag size={18} />} label={dp.soldMetric} value={sold.length} accent />
@@ -316,7 +324,6 @@ export default function DashboardPage() {
         <MetricCard icon={<TrendingUp size={18} />}  label={dp.avgPrice}   value={`${avgPrice.toLocaleString("uk-UA")} ₴`} />
       </div>
 
-      {/* Графіки */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
         <div className="lg:col-span-2 bg-[#19191c] border border-white/[0.06] rounded-2xl p-5">
           <h2 className="font-display font-medium text-sm text-zinc-300 mb-5">{dp.salesChart}</h2>
@@ -352,7 +359,6 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      {/* Топ-5 */}
       <div className="bg-[#19191c] border border-white/[0.06] rounded-2xl p-5 mb-6">
         <h2 className="font-display font-medium text-sm text-zinc-300 mb-4">{dp.top5}</h2>
         <div className="space-y-2">
@@ -375,7 +381,6 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      {/* ── Детальна таблиця продажів ── */}
       <SalesTable products={products} />
     </main>
   );

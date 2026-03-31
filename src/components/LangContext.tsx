@@ -142,6 +142,8 @@ const i18n: Record<Lang, Translations> = {
       title:     "Список продажів",
       search:    "Пошук моделі / IMEI…",
       allYears:  "Всі роки",
+      allMonths:"Всі місяці",
+      allDays:  "Будь-який день",
       allBrands: "Всі бренди",
       date:      "Дата",
       model:     "Модель",
@@ -292,6 +294,8 @@ const i18n: Record<Lang, Translations> = {
       title:     "Sales List",
       search:    "Search model / IMEI…",
       allYears:  "All years",
+      allMonths:"All months",
+      allDays:  "Any day",
       allBrands: "All brands",
       date:      "Date",
       model:     "Model",
@@ -366,6 +370,8 @@ export interface SalesTableTranslations {
   title: string;
   search: string;
   allYears: string;
+  allMonths: string;
+  allDays: string;
   allBrands: string;
   date: string;
   model: string;
