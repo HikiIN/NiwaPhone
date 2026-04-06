@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0) Gecko/20100101 Firefox/148.0" version="29.6.4" pages="6">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0" version="29.6.6" pages="6">
   <diagram id="c8nF4xJB-ZIxY3zSy8LY" name="КПЗ-1">
     <mxGraphModel dx="1249" dy="225" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -699,12 +699,12 @@
     </mxGraphModel>
   </diagram>
   <diagram id="vKLK17AV0ipE8XB5jeQg" name="ЛМИ-1">
-    <mxGraphModel dx="815" dy="429" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="983" dy="518" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="OifXnCv9cBM05Bx1JzBg-23" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;" value="" vertex="1">
-          <mxGeometry height="320" width="660" x="30" y="160" as="geometry" />
+          <mxGeometry height="440" width="660" x="30" y="160" as="geometry" />
         </mxCell>
         <mxCell id="OifXnCv9cBM05Bx1JzBg-6" edge="1" parent="1" source="OifXnCv9cBM05Bx1JzBg-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" target="OifXnCv9cBM05Bx1JzBg-2">
           <mxGeometry relative="1" as="geometry">
@@ -748,7 +748,20 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OifXnCv9cBM05Bx1JzBg-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Список телефонів&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;(Головний екран)&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;1,2,3,4,5&lt;/font&gt;&lt;/div&gt;" vertex="1">
+        <mxCell id="uLiUPM_oPVo7p8CocNRt-4" edge="1" parent="1" source="OifXnCv9cBM05Bx1JzBg-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="uLiUPM_oPVo7p8CocNRt-1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="470" y="310" />
+              <mxPoint x="470" y="550" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uLiUPM_oPVo7p8CocNRt-5" connectable="0" parent="uLiUPM_oPVo7p8CocNRt-4" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;div&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;14&amp;nbsp;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;Перехід&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="0.1592" y="-1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OifXnCv9cBM05Bx1JzBg-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Список телефонів&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;(Головний екран&lt;br&gt;&quot;Каталог&quot;)&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;1,2,3,4,5&lt;/font&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="70" width="150" x="290" y="250" as="geometry" />
         </mxCell>
         <mxCell id="OifXnCv9cBM05Bx1JzBg-5" edge="1" parent="1" source="OifXnCv9cBM05Bx1JzBg-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;exitX=0.75;exitY=0;exitDx=0;exitDy=0;" target="OifXnCv9cBM05Bx1JzBg-1">
@@ -795,6 +808,22 @@
         </mxCell>
         <mxCell id="OifXnCv9cBM05Bx1JzBg-20" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Користувач" vertex="1">
           <mxGeometry height="30" width="60" x="335" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="uLiUPM_oPVo7p8CocNRt-2" edge="1" parent="1" source="uLiUPM_oPVo7p8CocNRt-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.042;entryY=0.989;entryDx=0;entryDy=0;entryPerimeter=0;" target="OifXnCv9cBM05Bx1JzBg-1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="240" y="550" />
+              <mxPoint x="240" y="319" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uLiUPM_oPVo7p8CocNRt-3" connectable="0" parent="uLiUPM_oPVo7p8CocNRt-2" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;div&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;15&amp;nbsp;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;Повернутись&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.1206" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uLiUPM_oPVo7p8CocNRt-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Постачальники (Список та деталі)&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;14,15,16,17&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="150" x="290" y="515" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
