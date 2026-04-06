@@ -29,24 +29,51 @@ function getPurchasePrice(salePrice: number, brand: string): number {
   return Math.round(salePrice * (1 - discount));
 }
 
+type SortCol = "date" | "price" | "brand";
+
+function SortBtn({
+  col, label, sortBy, sortDir, onToggle,
+}: {
+  col: SortCol;
+  label: string;
+  sortBy: SortCol;
+  sortDir: "desc" | "asc";
+  onToggle: (col: SortCol) => void;
+}) {
+  return (
+    <button
+      onClick={() => onToggle(col)}
+      className={`flex items-center gap-1 text-[11px] uppercase tracking-wider font-semibold transition-colors ${
+        sortBy === col ? "text-zinc-200" : "text-zinc-600 hover:text-zinc-400"
+      }`}
+    >
+      {label}
+      <span className="text-[9px]">{sortBy === col ? (sortDir === "desc" ? "↓" : "↑") : "↕"}</span>
+    </button>
+  );
+}
+
 function SalesTable({ products }: { products: IProduct[] }) {
   const { t, lang } = useLang();
   const l = t.salesTable;
 
-  const [search, setSearch]       = useState("");
-  const [yearFilter, setYear]     = useState("all");
-  const [monthFilter, setMonth]   = useState("all");
-  const [dayFilter, setDay]       = useState("all");
-  const [brandFilter, setBrand]   = useState("all");
-  const [sortBy, setSort]         = useState<"date" | "price" | "brand">("date");
-  const [sortDir, setSortDir]     = useState<"desc" | "asc">("desc");
-  const [page, setPage]           = useState(1);
+  const [search, setSearch]     = useState("");
+  const [yearFilter, setYear]   = useState("all");
+  const [monthFilter, setMonth] = useState("all");
+  const [dayFilter, setDay]     = useState("all");
+  const [brandFilter, setBrand] = useState("all");
+  const [sortBy, setSort]       = useState<SortCol>("date");
+  const [sortDir, setSortDir]   = useState<"desc" | "asc">("desc");
+  const [page, setPage]         = useState(1);
   const PER_PAGE = 8;
 
-  const sold = products.filter(p => p.status === "проданий" && p.soldAt);
+  const sold = useMemo(
+    () => products.filter(p => p.status === "проданий" && p.soldAt),
+    [products]
+  );
 
-  const years  = Array.from(new Set(sold.map(p => new Date(p.soldAt!).getFullYear()))).sort((a,b)=>b-a);
-  const brands = Array.from(new Set(sold.map(p => p.brand))).sort();
+  const years  = useMemo(() => Array.from(new Set(sold.map(p => new Date(p.soldAt!).getFullYear()))).sort((a,b)=>b-a), [sold]);
+  const brands = useMemo(() => Array.from(new Set(sold.map(p => p.brand))).sort(), [sold]);
 
   const filtered = useMemo(() => {
     let list = sold;
@@ -70,7 +97,7 @@ function SalesTable({ products }: { products: IProduct[] }) {
   const totalPages = Math.ceil(filtered.length / PER_PAGE);
   const paged = filtered.slice((page-1)*PER_PAGE, page*PER_PAGE);
 
-  const toggleSort = (col: typeof sortBy) => {
+  const toggleSort = (col: SortCol) => {
     if (sortBy === col) setSortDir(d => d === "desc" ? "asc" : "desc");
     else { setSort(col); setSortDir("desc"); }
     setPage(1);
@@ -78,18 +105,6 @@ function SalesTable({ products }: { products: IProduct[] }) {
 
   const selectCls = "h-9 pl-3 pr-7 rounded-lg border border-white/[0.06] text-xs appearance-none cursor-pointer focus:outline-none";
   const selectStyle = { background: "#19191c", color: "#a1a1aa" };
-
-  const SortBtn = ({ col, label }: { col: typeof sortBy; label: string }) => (
-    <button
-      onClick={() => toggleSort(col)}
-      className={`flex items-center gap-1 text-[11px] uppercase tracking-wider font-semibold transition-colors ${
-        sortBy === col ? "text-zinc-200" : "text-zinc-600 hover:text-zinc-400"
-      }`}
-    >
-      {label}
-      <span className="text-[9px]">{sortBy === col ? (sortDir === "desc" ? "↓" : "↑") : "↕"}</span>
-    </button>
-  );
 
   return (
     <div className="bg-[#19191c] border border-white/[0.06] rounded-2xl overflow-hidden">
@@ -150,11 +165,11 @@ function SalesTable({ products }: { products: IProduct[] }) {
         <table className="w-full">
           <thead>
             <tr className="border-b border-white/[0.04]">
-              <th className="text-left px-5 py-3"><SortBtn col="date"  label={l.date} /></th>
+              <th className="text-left px-5 py-3"><SortBtn col="date"  label={l.date}  sortBy={sortBy} sortDir={sortDir} onToggle={toggleSort} /></th>
               <th className="text-left px-3 py-3"><span className="text-[11px] uppercase tracking-wider font-semibold text-zinc-600">{l.model}</span></th>
-              <th className="text-left px-3 py-3"><SortBtn col="brand" label={l.brand} /></th>
+              <th className="text-left px-3 py-3"><SortBtn col="brand" label={l.brand} sortBy={sortBy} sortDir={sortDir} onToggle={toggleSort} /></th>
               <th className="text-left px-3 py-3 hidden sm:table-cell"><span className="text-[11px] uppercase tracking-wider font-semibold text-zinc-600">{l.imei}</span></th>
-              <th className="text-right px-5 py-3"><SortBtn col="price" label={l.price} /></th>
+              <th className="text-right px-5 py-3"><SortBtn col="price" label={l.price} sortBy={sortBy} sortDir={sortDir} onToggle={toggleSort} /></th>
             </tr>
           </thead>
           <tbody>
@@ -245,7 +260,7 @@ export default function DashboardPage() {
   const [products, setProducts] = useState<IProduct[]>([]);
   const [loading, setLoading]   = useState(true);
 
-  const role = (session?.user as any)?.role;
+  const role = (session?.user as { role?: string })?.role;
 
   useEffect(() => {
     if (status === "unauthenticated") { router.push("/"); return; }

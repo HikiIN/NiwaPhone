@@ -54,7 +54,7 @@ export function Footer() {
           <div className="flex flex-col gap-3">
             <div className="flex items-center gap-2.5">
               <Image src="/logo-wh.svg" alt="NiwaPhone" width={24} height={24} className="opacity-70" />
-              <span className="font-display text-base text-dark-gray tracking-wide">NiwaPhone v0.5.10</span>
+              <span className="font-display text-base text-dark-gray tracking-wide">NiwaPhone v0.5.11</span>
             </div>
             <p className="text-[11px] text-zinc-600 max-w-[220px] leading-relaxed">
               {t.madeBy === "Розроблено"
