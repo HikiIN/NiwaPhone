@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState, createContext, useContext, useCallback, useRef } from "react";
+import { useEffect, useState, createContext, useContext, useCallback } from "react";
 import { CheckCircle2, XCircle, AlertTriangle, Info, X } from "lucide-react";
 
 type ToastType = "success" | "error" | "warning" | "info";
@@ -60,16 +60,16 @@ function ToastItem({ toast, onRemove }: { toast: Toast; onRemove: (id: string) =
   const s = STYLES[toast.type];
   const Icon = ICONS[toast.type];
 
+  const dismiss = useCallback(() => {
+    setLeaving(true);
+    setTimeout(() => onRemove(toast.id), 350);
+  }, [onRemove, toast.id]);
+
   useEffect(() => {
     const t1 = setTimeout(() => setVisible(true), 10);
     const t2 = setTimeout(() => dismiss(), 4500);
     return () => { clearTimeout(t1); clearTimeout(t2); };
-  }, []);
-
-  const dismiss = () => {
-    setLeaving(true);
-    setTimeout(() => onRemove(toast.id), 350);
-  };
+  }, [dismiss]);
 
   return (
     <div

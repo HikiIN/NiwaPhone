@@ -1,6 +1,6 @@
 <div align="center">
   <h1>
-    <img src="./app/favicon.ico" width="35" height="35" alt="Icon" /> 
+    <img src="/src/app/favicon.ico" width="35" height="35" alt="Icon" /> 
     NiwaPhone
   </h1>
 
