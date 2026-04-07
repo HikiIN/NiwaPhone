@@ -25,7 +25,7 @@ export function ProductCard({ product, onClick }: { product: IProduct; onClick: 
       
       <div className="relative h-[200px] bg-[#111] flex items-center justify-center hover-zoom-container overflow-hidden">
         {mainImg ? (
-          <img src={mainImg} alt={product.model} className="w-full h-full object-cover hover-zoom-img" />
+          <Image src={mainImg} alt={product.model} width={400} height={200} className="w-full h-full object-cover hover-zoom-img" />
         ) : (
           <div className="w-16 h-24 rounded-xl border border-white/10 flex flex-col items-center justify-end pb-2 gap-1 bg-[#19191c]">
             <div className="w-6 h-6 rounded-full border border-white/10" />

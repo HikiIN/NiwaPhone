@@ -4,7 +4,7 @@ import { connectDB } from "@/lib/mongoose";
 import { Product } from "@/lib/models/Product";
 import { User } from "@/lib/models/User";
 
-export async function GET(req: Request) {
+export async function GET() {
   const session = await getServerSession();
   if (!session?.user?.email) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
@@ -33,8 +33,8 @@ export async function GET(req: Request) {
     },
     stats: {
       totalProducts: products.length,
-      inStock: products.filter((p: any) => p.status === "в наявності").length,
-      sold: products.filter((p: any) => p.status === "проданий").length,
+      inStock: products.filter((p: { status: string }) => p.status === "в наявності").length,
+      sold:    products.filter((p: { status: string }) => p.status === "проданий").length,
       ...(users ? { totalUsers: users.length } : {}),
     },
     products,

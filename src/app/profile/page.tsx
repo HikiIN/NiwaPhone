@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { User, Mail, Shield, Calendar, Download, Upload, Languages, Check, Eye, AlertCircle } from "lucide-react";
 import { useLang } from "@/components/LangContext";
+import Image from "next/image";
 
 export default function ProfilePage() {
   const { data: session, status } = useSession();
@@ -28,8 +29,7 @@ export default function ProfilePage() {
     );
   }
 
-  const user = session.user as any;
-  const role: string = user?.role || "Гість";
+  const role: string = (session.user as { role?: string })?.role || "Гість";
   const isAdmin  = role === "Адміністратор";
   const isSeller = role === "Продавець" || isAdmin;
   const isGuest  = role === "Гість";
@@ -98,7 +98,7 @@ export default function ProfilePage() {
         <div className="bg-zinc-900 border border-white/[0.06] rounded-2xl p-6 flex flex-col items-center text-center gap-4">
 
           {session.user?.image ? (
-            <img src={session.user.image} alt="avatar" className="w-20 h-20 rounded-full border-2 border-white/10 object-cover" />
+            <Image src={session.user.image} alt="avatar" width={80} height={80} className="w-20 h-20 rounded-full border-2 border-white/10 object-cover" />
           ) : (
             <div className="w-20 h-20 rounded-full bg-zinc-800 border-2 border-white/10 flex items-center justify-center">
               <User size={32} className="text-zinc-500" />

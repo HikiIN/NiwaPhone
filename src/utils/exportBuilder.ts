@@ -6,15 +6,30 @@ interface IUserBase {
 
 interface IProductLite {
   status: string;
-  [key: string]: any;
+  [key: string]: unknown;
+}
+
+interface IStats {
+  totalProducts: number;
+  inStock: number;
+  sold: number;
+  totalUsers?: number;
+}
+
+interface IExportData {
+  exportedAt: string;
+  exportedBy: IUserBase;
+  stats: IStats;
+  products: IProductLite[];
+  users?: IUserBase[];
 }
 
 export function buildExportData(
   exportingUser: IUserBase,
   products: IProductLite[],
-  allUsers: any[] | null = null
-) {
-  const stats: any = {
+  allUsers: IUserBase[] | null = null
+): IExportData {
+  const stats: IStats = {
     totalProducts: products.length,
     inStock: products.filter((p) => p.status === "в наявності").length,
     sold: products.filter((p) => p.status === "проданий").length,
@@ -24,7 +39,7 @@ export function buildExportData(
     stats.totalUsers = allUsers.length;
   }
 
-  const exportData: any = {
+  const exportData: IExportData = {
     exportedAt: new Date().toISOString(),
     exportedBy: {
       name: exportingUser.name,

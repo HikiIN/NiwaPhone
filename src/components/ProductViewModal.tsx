@@ -2,10 +2,11 @@
 import { useState } from "react";
 import {
   X, ChevronLeft, ChevronRight, Pencil, Trash2,
-  ShoppingBag, Cpu, Calendar, CreditCard, Hash,
-  Tag, CheckCircle2, XCircle, ImageOff, ChevronDown,
+  ShoppingBag, Cpu, Calendar, Hash,
+  Tag, CheckCircle2, XCircle, ImageOff,
 } from "lucide-react";
 import type { IProduct } from "./ProductCard";
+import Image from "next/image";
 
 interface Props {
   product: IProduct;
@@ -55,10 +56,11 @@ export function ProductViewModal({ product, onClose, isAdmin, isSeller, onEdit, 
             <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden bg-[#111] flex items-center justify-center">
               {imagesList.length > 0 ? (
                 <>
-                  <img
+                  <Image
                     src={imagesList[imgIdx]}
                     alt={product.model}
-                    className="w-full h-full object-cover"
+                    fill
+                    className="object-cover"
                   />
                   <div className={`absolute top-3 left-3 flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold tracking-wide backdrop-blur-md ${
                     sold
@@ -99,7 +101,7 @@ export function ProductViewModal({ product, onClose, isAdmin, isSeller, onEdit, 
                       i === imgIdx ? "border-[#B03D3D]" : "border-white/10 opacity-50 hover:opacity-100"
                     }`}
                   >
-                    <img src={src} alt="" className="w-full h-full object-cover" />
+                    <Image src={src} alt="" width={40} height={40} className="w-full h-full object-cover" />
                   </button>
                 ))}
               </div>

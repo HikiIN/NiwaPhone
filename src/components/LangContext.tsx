@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 export type Lang = "uk" | "en";
 
@@ -458,12 +458,11 @@ interface LangContextValue {
 const LangContext = createContext<LangContextValue | null>(null);
 
 export function LangProvider({ children }: { children: React.ReactNode }) {
-  const [lang, setLang] = useState<Lang>("uk");
-
-  useEffect(() => {
+  const [lang, setLang] = useState<Lang>(() => {
+    if (typeof window === "undefined") return "uk";
     const saved = localStorage.getItem("niwaphone_lang") as Lang | null;
-    if (saved === "uk" || saved === "en") setLang(saved);
-  }, []);
+    return saved === "uk" || saved === "en" ? saved : "uk";
+  });
 
   const toggleLang = () => {
     const next: Lang = lang === "uk" ? "en" : "uk";

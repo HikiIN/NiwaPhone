@@ -4,6 +4,10 @@ import { connectDB } from "@/lib/mongoose";
 import { Product } from "@/lib/models/Product";
 import { User } from "@/lib/models/User";
 
+interface ImportBody {
+  products?: unknown[];
+}
+
 export async function POST(req: Request) {
   const session = await getServerSession();
   if (!session?.user?.email) {
@@ -16,7 +20,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
 
-  let body: any;
+  let body: ImportBody;
   try {
     body = await req.json();
   } catch {
@@ -34,16 +38,18 @@ export async function POST(req: Request) {
 
   for (const p of products) {
     try {
-      const { _id, __v, createdAt, updatedAt, ...data } = p;
+      const { _id: _1, __v: _2, createdAt: _3, updatedAt: _4, ...data } = p as Record<string, unknown>;
+      void _1; void _2; void _3; void _4;
       await Product.findOneAndUpdate(
-        { imei: data.imei },
+        { imei: (data as { imei: string }).imei },
         { $set: data },
         { upsert: true, new: true }
       );
       imported++;
-    } catch (e: any) {
+    } catch (e) {
       skipped++;
-      if (errors.length < 5) errors.push(`IMEI ${p.imei}: ${e.message}`);
+      const msg = e instanceof Error ? e.message : String(e);
+      if (errors.length < 5) errors.push(`IMEI ${(p as { imei?: string }).imei}: ${msg}`);
     }
   }
 

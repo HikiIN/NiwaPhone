@@ -11,14 +11,25 @@ interface Props {
 }
 
 const BRANDS = ["Apple", "Samsung", "Google", "OnePlus", "Xiaomi", "Nothing", "Motorola", "Інший"];
-const EMPTY = {
+
+interface FormState {
+  model: string;
+  brand: string;
+  year: number;
+  price: string | number;
+  imei: string;
+  images: string[];
+  status: "в наявності" | "проданий";
+}
+
+const EMPTY: FormState = {
   model: "",
   brand: "Apple",
   year: new Date().getFullYear(),
   price: "",
   imei: "",
   images: ["", "", ""],
-  status: "в наявності" as const,
+  status: "в наявності",
 };
 
 function ModalSelect({
@@ -53,7 +64,7 @@ function ModalSelect({
 }
 
 export function ProductModal({ open, product, onClose, onSave }: Props) {
-  const [form, setForm] = useState<any>(EMPTY);
+  const [form, setForm] = useState<FormState>(EMPTY);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -64,7 +75,7 @@ export function ProductModal({ open, product, onClose, onSave }: Props) {
           ? [...product.images]
           : product.imageUrl ? [product.imageUrl] : [];
         while (existingImages.length < 3) existingImages.push("");
-        setForm({ ...product, images: existingImages });
+        setForm({ ...product, images: existingImages, price: product.price });
       } else {
         setForm(EMPTY);
       }
@@ -72,7 +83,8 @@ export function ProductModal({ open, product, onClose, onSave }: Props) {
     }
   }, [open, product]);
 
-  const set = (k: string, v: any) => setForm((f: any) => ({ ...f, [k]: v }));
+  const set = <K extends keyof FormState>(k: K, v: FormState[K]) =>
+    setForm(f => ({ ...f, [k]: v }));
 
   const handleImageChange = (index: number, val: string) => {
     const newImages = form.images?.length ? [...form.images] : ["", "", ""];
@@ -91,8 +103,8 @@ export function ProductModal({ open, product, onClose, onSave }: Props) {
       const cleanImages = (form.images || []).filter((img: string) => img && img.trim() !== "");
       await onSave({ ...form, price: Number(form.price), images: cleanImages });
       onClose();
-    } catch (e: any) {
-      setError(e.message || "Помилка збереження");
+    } catch (e: unknown) {
+      setError(e instanceof Error ? e.message : "Помилка збереження");
     } finally {
       setLoading(false);
     }
@@ -189,7 +201,7 @@ export function ProductModal({ open, product, onClose, onSave }: Props) {
           {product && (
             <div>
               <label className="block text-xs text-zinc-400 mb-1.5 ml-1">Статус</label>
-              <ModalSelect value={form.status} onChange={v => set("status", v)}>
+              <ModalSelect value={form.status} onChange={v => set("status", v as "в наявності" | "проданий")}>
                 <option value="в наявності" style={{ background: "#19191c", color: "#f0f0f0" }}>В наявності</option>
                 <option value="проданий" style={{ background: "#19191c", color: "#f0f0f0" }}>Проданий</option>
               </ModalSelect>

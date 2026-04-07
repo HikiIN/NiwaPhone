@@ -1,6 +1,6 @@
 {
   "name": "niwa-phone",
-  "version": "0.5.11",
+  "version": "0.5.30",
   "private": true,
   "scripts": {
     "dev": "next dev",

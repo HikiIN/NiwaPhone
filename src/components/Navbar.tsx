@@ -13,7 +13,7 @@ export function Navbar() {
   const [mobileMenu, setMobileMenu] = useState(false);
   const { t, lang } = useLang();
 
-  const role    = (session?.user as any)?.role as string | undefined;
+  const role = (session?.user as { role?: string })?.role;
   const isAdmin = role === "Адміністратор";
   const isGuest = role === "Гість";
 
@@ -49,7 +49,7 @@ export function Navbar() {
               )}
               <Link href="/profile" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
                 {session.user?.image ? (
-                  <img src={session.user.image} alt="Avatar" referrerPolicy="no-referrer" className="w-9 h-9 rounded-full border border-white/10 object-cover" />
+                  <Image src={session.user.image} alt="Avatar" width={36} height={36} referrerPolicy="no-referrer" className="w-9 h-9 rounded-full border border-white/10 object-cover" />
                 ) : (
                   <div className="w-9 h-9 rounded-full bg-zinc-800 flex items-center justify-center border border-white/10">
                     <User size={16} className="text-zinc-400" />
@@ -91,7 +91,7 @@ export function Navbar() {
           {session ? (
             <div className="flex items-center justify-between">
               <Link href="/profile" onClick={() => setMobileMenu(false)} className="flex items-center gap-3">
-                {session.user?.image && <img src={session.user.image} alt="Avatar" className="w-10 h-10 rounded-full" />}
+                {session.user?.image && <Image src={session.user.image} alt="Avatar" width={40} height={40} className="w-10 h-10 rounded-full" />}
                 <div>
                   <p className="text-sm text-white font-medium">{session.user?.name}</p>
                   <p className={`text-xs ${isGuest ? "text-zinc-500" : isAdmin ? "text-red-DEFAULT" : "text-amber-400"}`}>{role}</p>

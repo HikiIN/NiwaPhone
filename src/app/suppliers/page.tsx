@@ -501,7 +501,7 @@ export default function SuppliersPage() {
   const [selected, setSelected]         = useState<typeof SUPPLIERS[0] | null>(null);
   const [statusFilter, setStatusFilter] = useState<"all" | "active" | "inactive">("all");
 
-  const role = (session?.user as any)?.role;
+  const role = (session?.user as { role?: string })?.role;
 
   useEffect(() => {
     if (status === "unauthenticated") { router.push("/"); return; }
@@ -549,7 +549,6 @@ export default function SuppliersPage() {
 
   const activeCount    = SUPPLIERS.filter(sup => sup.status === "active").length;
   const totalDelivered = Object.values(statsMap).reduce((acc, v) => acc + v.total, 0);
-  const totalRevenue   = Object.values(statsMap).reduce((acc, v) => acc + v.revenue, 0);
   const totalStockCost = products
     .filter(p => p.status === "в наявності")
     .reduce((sum, p) => sum + getPurchasePrice(p.price, p.brand), 0);

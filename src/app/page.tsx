@@ -69,7 +69,7 @@ export default function HomePage() {
   const { data: session } = useSession();
   const { t, lang } = useLang();
 
-  const role = (session?.user as any)?.role;
+  const role = (session?.user as { role?: string })?.role;
   const isAdmin  = role === "Адміністратор";
   const isSeller = role === "Продавець" || isAdmin;
 

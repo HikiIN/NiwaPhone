@@ -15,6 +15,6 @@ const productSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-delete (mongoose.models as any).Product;
+delete (mongoose.models as Record<string, mongoose.Model<mongoose.Document>>).Product;
 
 export const Product = mongoose.model("Product", productSchema);

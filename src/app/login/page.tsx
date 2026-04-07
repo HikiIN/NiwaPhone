@@ -8,7 +8,7 @@ import { Eye, Loader2 } from "lucide-react";
 import { useLang } from "@/components/LangContext";
 
 export default function LoginPage() {
-  const { data: session, status } = useSession();
+  const { status } = useSession();
   const router = useRouter();
   const { t } = useLang();
   const [loadingGoogle, setLoadingGoogle] = useState(false);

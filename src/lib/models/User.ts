@@ -14,7 +14,6 @@ const userSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-delete (mongoose.models as any).User;
+delete (mongoose.models as Record<string, mongoose.Model<mongoose.Document>>).User;
 
-delete (mongoose.models as any).User;
 export const User = mongoose.model("User", userSchema);

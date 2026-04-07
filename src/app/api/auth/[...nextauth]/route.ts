@@ -36,8 +36,8 @@ const handler = NextAuth({
       const dbUser = await User.findOne({ email });
 
       if (dbUser && session.user) {
-        (session.user as any).role = dbUser.role;
-        (session.user as any).id   = dbUser._id.toString();
+        (session.user as { role?: string; id?: string }).role = dbUser.role;
+        (session.user as { role?: string; id?: string }).id   = dbUser._id.toString();
         session.user.image = dbUser.image;
       }
 
