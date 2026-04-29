@@ -2,7 +2,7 @@
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LogOut, User, Menu, X, Eye } from "lucide-react";
+import { LogOut, User, Menu, X, Eye, HelpCircle } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
 import { useLang } from "./LangContext";
@@ -33,12 +33,16 @@ export function Navbar() {
         </Link>
 
         <nav className="hidden md:flex items-center gap-2 absolute left-1/2 -translate-x-1/2">
-          <NavLink href="/"           label={t.catalog}   active={pathname === "/"} />
-          {isAdmin && <NavLink href="/dashboard"  label={t.dashboard}  active={pathname === "/dashboard"} />}
-          {isAdmin && <NavLink href="/suppliers"  label={lang === "uk" ? "Постачальники" : "Suppliers"} active={pathname === "/suppliers"} />}
+          <NavLink href="/" label={t.catalog} active={pathname === "/"} />
+          {isAdmin && <NavLink href="/dashboard" label={t.dashboard} active={pathname === "/dashboard"} />}
+          {isAdmin && <NavLink href="/suppliers" label={lang === "uk" ? "Постачальники" : "Suppliers"} active={pathname === "/suppliers"} />}
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
+          <Link href="/help" className="p-2 rounded-lg text-zinc-500 hover:text-white hover:bg-white/5 transition-colors">
+            <HelpCircle size={20} />
+          </Link>
+
           {session ? (
             <div className="flex items-center gap-3">
               {role && (
@@ -87,6 +91,11 @@ export function Navbar() {
               {lang === "uk" ? "Постачальники" : "Suppliers"}
             </Link>
           )}
+          
+          <Link href="/help" onClick={() => setMobileMenu(false)} className={`p-3 rounded-xl ${pathname === "/help" ? "bg-white/10 text-white" : "text-zinc-400"} flex items-center gap-2`}>
+            <HelpCircle size={18} /> {lang === "uk" ? "Довідка (F.A.Q.)" : "Help (F.A.Q.)"}
+          </Link>
+
           <hr className="border-white/5 my-2" />
           {session ? (
             <div className="flex items-center justify-between">
