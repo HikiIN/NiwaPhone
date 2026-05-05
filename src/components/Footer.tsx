@@ -127,7 +127,7 @@ export function Footer() {
             <div className="flex items-center gap-1.5 group">
               <NiwatrixLogo size={14} />
               <span className="font-display font-bold tracking-[0.18em] text-[11px] text-zinc-500 group-hover:text-zinc-400 transition-colors uppercase">
-                Niwatrix v0.5.30
+                Niwatrix v0.5.31
               </span>
             </div>
           </div>

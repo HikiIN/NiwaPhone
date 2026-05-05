@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { BookOpen, ShieldCheck, ShoppingCart, ChevronDown, HelpCircle, Phone } from "lucide-react";
+import { BookOpen, ShieldCheck, ShoppingCart, ChevronDown, HelpCircle, Phone, FileText, FileJson } from "lucide-react";
 
 export default function HelpPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
@@ -22,7 +22,6 @@ export default function HelpPage() {
 
   return (
     <div className="min-h-screen bg-[#0f0f10] text-zinc-300 pb-20">
-      {/* Hero Section */}
       <div className="w-full bg-[#19191c] border-b border-white/5 pt-16 pb-12 px-5">
         <div className="max-w-[800px] mx-auto text-center animate-fadeUp">
           <div className="w-16 h-16 bg-[#B03D3D]/10 text-[#B03D3D] rounded-2xl flex items-center justify-center mx-auto mb-6">
@@ -39,7 +38,6 @@ export default function HelpPage() {
 
       <div className="max-w-[800px] mx-auto px-5 mt-12 flex flex-col gap-12">
         
-        {/* Інструкції за ролями */}
         <section className="animate-fadeUp" style={{ animationDelay: "0.1s" }}>
           <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
             <ShieldCheck className="text-[#B03D3D]" /> Функціонал за ролями
@@ -71,7 +69,6 @@ export default function HelpPage() {
           </div>
         </section>
 
-        {/* Глосарій */}
         <section className="animate-fadeUp" style={{ animationDelay: "0.2s" }}>
           <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
             <BookOpen className="text-[#B03D3D]" /> Глосарій термінів
@@ -92,7 +89,6 @@ export default function HelpPage() {
           </div>
         </section>
 
-        {/* FAQ */}
         <section className="animate-fadeUp" style={{ animationDelay: "0.3s" }}>
           <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
             <HelpCircle className="text-[#B03D3D]" /> Часті запитання (F.A.Q.)
@@ -120,17 +116,102 @@ export default function HelpPage() {
           </div>
         </section>
 
-        {/* Контакти підтримки */}
+
         <div className="bg-[#B03D3D]/10 border border-[#B03D3D]/20 rounded-2xl p-6 text-center animate-fadeUp" style={{ animationDelay: "0.4s" }}>
           <Phone className="text-[#B03D3D] mx-auto mb-3" size={24} />
           <h3 className="text-white font-bold mb-2">Залишилися питання?</h3>
           <p className="text-zinc-400 text-sm">Зверніться до головного адміністратора системи за номером.</p>
-          <p className="text-zinc-400 text-sm">(🇺🇦)+380 ...</p>
-          <p className="text-zinc-400 text-sm">(🇨🇿)+420 ...</p>
-          <p className="text-zinc-400 text-sm">(🇵🇱)+48 ...</p>
-          <p className="text-zinc-400 text-sm">(🇹🇼)+09 ...</p>
-          <p className="text-zinc-400 text-sm">(🇺🇸)+1 ...</p>
+          <p className="text-zinc-400 text-sm mt-2">(🇺🇦)+380 ** *** ** **</p>
         </div>
+
+        <section className="mt-8 pt-8 border-t border-white/5 animate-fadeUp" style={{ animationDelay: "0.5s" }}>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 bg-zinc-900/40 p-6 rounded-2xl border border-white/5">
+            <div>
+              <h3 className="text-lg font-bold text-white mb-1 flex items-center gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-[#B03D3D]" />
+                Технічна документація
+              </h3>
+              <p className="text-sm text-zinc-500 max-w-md">
+                Завантажити довідку у форматі документа Word або переглянути структуру JSON.
+              </p>
+            </div>
+            
+            <div className="flex flex-row items-center gap-2">
+              <button 
+                onClick={() => {
+                  const docContent = `
+                    <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+                    <head>
+                      <meta charset="utf-8">
+                      <title>Довідкова система NiwaPhone</title>
+                      <style>
+                        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.5; }
+                        h1 { color: #B03D3D; text-align: center; border-bottom: 2px solid #B03D3D; padding-bottom: 10px; }
+                        h2 { color: #2c3e50; margin-top: 20px; }
+                        .subtitle { text-align: center; color: #7f8c8d; font-size: 11pt; margin-bottom: 30px; }
+                        .faq-item { margin-bottom: 20px; padding: 15px; border-left: 4px solid #B03D3D; background-color: #f9f9f9; }
+                        .question { font-weight: bold; font-size: 14pt; margin-bottom: 5px; color: #000; }
+                        .answer { font-size: 12pt; color: #444; }
+                        .footer { text-align: center; margin-top: 40px; font-size: 10pt; color: #999; border-top: 1px solid #ccc; padding-top: 10px; }
+                      </style>
+                    </head>
+                    <body>
+                      <h1>Довідкова система NiwaPhone</h1>
+                      <p class="subtitle">Офіційна документація. Версія 6.0</p>
+                      
+                      <h2>Часті запитання (F.A.Q.)</h2>
+                      ${faqs.map(f => `
+                        <div class="faq-item">
+                          <p class="question">Питання: ${f.q}</p>
+                          <p class="answer"><strong>Відповідь:</strong> ${f.a}</p>
+                        </div>
+                      `).join('')}
+
+                      <p class="footer">© 2026 NiwaPhone System.</p>
+                    </body>
+                    </html>
+                  `;
+                  
+                  const blob = new Blob(['\ufeff', docContent], { type: 'application/msword' });
+                  const url = URL.createObjectURL(blob);
+                  const downloadAnchorNode = document.createElement('a');
+                  downloadAnchorNode.setAttribute("href", url);
+                  downloadAnchorNode.setAttribute("download", "NiwaPhone_Help.doc");
+                  document.body.appendChild(downloadAnchorNode);
+                  downloadAnchorNode.click();
+                  document.body.removeChild(downloadAnchorNode);
+                  URL.revokeObjectURL(url);
+                }}
+                className="flex items-center gap-2 px-4 py-2 rounded-lg border border-white/10 bg-transparent hover:bg-white/[0.06] text-zinc-400 hover:text-white transition-colors text-sm font-medium whitespace-nowrap"
+              >
+                <FileText size={16} />
+                Формат DOC
+              </button>
+
+              <button 
+                onClick={() => {
+                  const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify({
+                    project: "NiwaPhone",
+                    version: "6.0",
+                    description: "Довідкова система",
+                    help_topics: faqs
+                  }, null, 2));
+                  
+                  const downloadAnchorNode = document.createElement('a');
+                  downloadAnchorNode.setAttribute("href", dataStr);
+                  downloadAnchorNode.setAttribute("download", "niwaphone_help.json");
+                  document.body.appendChild(downloadAnchorNode);
+                  downloadAnchorNode.click();
+                  downloadAnchorNode.remove();
+                }}
+                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#B03D3D] hover:bg-[#9a3434] text-white transition-all shadow-md shadow-[#B03D3D]/20 text-sm font-medium whitespace-nowrap"
+              >
+                <FileJson size={16} />
+                Формат JSON
+              </button>
+            </div>
+          </div>
+        </section>
 
       </div>
     </div>
