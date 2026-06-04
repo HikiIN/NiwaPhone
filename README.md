@@ -12,21 +12,15 @@
 
   <br />
   <br />
-
-  **[🇺🇦 Українська](#ukrainian) | [🇬🇧 English](#english)**
-
-  <br />
-
-  <img src="/public/NiwaPhoneCover.png" alt="NiwaPhone Cover" width="100%" />
   
 </div>
 
 ---
 
-<a id="ukrainian"></a>
 ## 📱 Про проєкт
 
-**NiwaPhone** - це сучасна автоматизована система (web-додаток) для управління асортиментом та обліку товарів у магазині електроніки. Проєкт розроблено з метою оптимізації робочих процесів, контролю наявності смартфонів та глибокої аналітики продажів.
+**NiwaPhone** - це сучасна автоматизована система (web-додаток) для управління асортиментом та обліку товарів у магазині електроніки.
+Проєкт розроблено з метою оптимізації робочих процесів, контролю наявності смартфонів та глибокої аналітики продажів.
 
 ### Основні можливості:
 - **Каталог товарів:** Зручне додавання, редагування, видалення та пошук смартфонів за моделлю, брендом або унікальним IMEI.
@@ -37,20 +31,25 @@
 
 ---
 
-<a id="english"></a>
-## 📱 About the project
+## Скріншоти
 
-**NiwaPhone** is a modern automated system (web application) for managing the assortment and inventory of an electronics store. The project was developed to optimize workflows, control the availability of smartphones, and provide deep sales analytics.
+| Головна | Дашборд | Постачальники |
+|---|---|---|
+| ![Головна](docs/screenshots/01-home.png) | ![Дашборд](docs/screenshots/02-dashboard.png) | ![Постачальники](docs/screenshots/03-suppliers.png) |
 
-### Key features:
-- **Product Catalog:** Conveniently add, edit, delete, and search for smartphones by model, brand, or unique IMEI.
-- **Sales Management:** Quickly change the product status ("in stock" / "sold") with automatic recording of the sale date.
-- **Analytics Dashboard:** Visualization of key metrics (revenue, number of products sold, average order value) and interactive sales charts by brands and months.
-- **Supplier Database:** Track purchases, calculate wholesale discounts and margins, and monitor delivery statuses.
-- **Access Control:** Secure authorization via Google with role-based access control (Administrator, Seller, Guest) to protect commercial information.
+| Особистий кабінет | Вхід до системи |
+|---|---|
+| ![Особистий кабінет](docs/screenshots/04-personal-account.png) | ![Вхід до системи](docs/screenshots/05-registration-page.png) |
+
+### Мобільна версія
+
+| Головна | Бокове меню | Сторінка товару |
+|---|---|---|
+| ![Головна](docs/screenshots/m2-home.png) | ![Бокове меню](docs/screenshots/m1-drawer.png) | ![Сторінка товару](docs/screenshots/m3-product-page.png) |
 
 ---
 
-```text
-Licensed under the **GNU Affero General Public License v3.0** (AGPL-3.0).
-See the [LICENSE] file for details.
+## Ліцензія
+
+Проєкт ліцензовано згідно з **GNU Affero General Public License v3.0** (AGPL-3.0).
+Деталі дивіться у файлі [LICENSE](LICENSE).
