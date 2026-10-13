@@ -1046,7 +1046,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="A0gpkQ4yxcq3gtUl0JMF" name="МПЗ-2">
-    <mxGraphModel dx="2876" dy="2298" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2005" dy="1818" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1055,6 +1055,13 @@
             <mxGeometry as="geometry" />
           </mxCell>
         </UserObject>
+        <mxCell id="4GwSpu27koy7nXJlbT5l-169" edge="1" parent="4GwSpu27koy7nXJlbT5l-1" source="4GwSpu27koy7nXJlbT5l-115" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="4GwSpu27koy7nXJlbT5l-122">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="220.5" y="-1020" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
         <UserObject label="Адміністратор" plantUmlId="n_0" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=3;strokeWidth=1.5;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" plantUmlBaseValue="Адміністратор" id="4GwSpu27koy7nXJlbT5l-115">
           <mxCell parent="4GwSpu27koy7nXJlbT5l-1" style="rounded=1;absoluteArcSize=1;arcSize=3;strokeWidth=1.5;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" vertex="1">
             <mxGeometry height="49" width="141" x="722.9985714285713" y="-1060" as="geometry" />
