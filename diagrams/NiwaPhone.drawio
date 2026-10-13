@@ -1046,7 +1046,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="A0gpkQ4yxcq3gtUl0JMF" name="МПЗ-2">
-    <mxGraphModel dx="2005" dy="1818" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="3265" dy="2512" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1062,6 +1062,11 @@
             </Array>
           </mxGeometry>
         </mxCell>
+        <mxCell id="4GwSpu27koy7nXJlbT5l-172" connectable="0" parent="4GwSpu27koy7nXJlbT5l-169" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Додавання" vertex="1">
+          <mxGeometry relative="1" x="0.8409" y="-2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
         <UserObject label="Адміністратор" plantUmlId="n_0" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=3;strokeWidth=1.5;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" plantUmlBaseValue="Адміністратор" id="4GwSpu27koy7nXJlbT5l-115">
           <mxCell parent="4GwSpu27koy7nXJlbT5l-1" style="rounded=1;absoluteArcSize=1;arcSize=3;strokeWidth=1.5;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" vertex="1">
             <mxGeometry height="49" width="141" x="722.9985714285713" y="-1060" as="geometry" />
@@ -1072,6 +1077,18 @@
             <mxGeometry height="49" width="110" x="119.99857142857127" y="-770" as="geometry" />
           </mxCell>
         </UserObject>
+        <mxCell id="4GwSpu27koy7nXJlbT5l-173" edge="1" parent="4GwSpu27koy7nXJlbT5l-1" source="4GwSpu27koy7nXJlbT5l-117" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="4GwSpu27koy7nXJlbT5l-123">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="408.5" y="-595" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4GwSpu27koy7nXJlbT5l-174" connectable="0" parent="4GwSpu27koy7nXJlbT5l-173" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Замовлення" vertex="1">
+          <mxGeometry relative="1" x="-0.2441" y="-1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
         <UserObject label="Покупець" plantUmlId="n_2" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=3;strokeWidth=1.5;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" plantUmlBaseValue="Покупець" id="4GwSpu27koy7nXJlbT5l-117">
           <mxCell parent="4GwSpu27koy7nXJlbT5l-1" style="rounded=1;absoluteArcSize=1;arcSize=3;strokeWidth=1.5;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" vertex="1">
             <mxGeometry height="49" width="102" x="319.9985714285714" y="-771.5" as="geometry" />
@@ -1117,6 +1134,11 @@
             <Array as="points">
               <mxPoint x="-60" y="-1035.5" />
             </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4GwSpu27koy7nXJlbT5l-171" connectable="0" parent="4GwSpu27koy7nXJlbT5l-170" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Залишки" vertex="1">
+          <mxGeometry relative="1" x="-0.9379" as="geometry">
+            <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
         <UserObject label="«process»&#xa;6.0&#xa;Формування&#xa;аналітичних звітів" plantUmlId="n_10" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=25;strokeWidth=2;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" plantUmlBaseValue="«process»&#xa;6.0&#xa;Формування&#xa;аналітичних звітів" id="4GwSpu27koy7nXJlbT5l-125">
