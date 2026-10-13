@@ -1046,7 +1046,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="A0gpkQ4yxcq3gtUl0JMF" name="МПЗ-2">
-    <mxGraphModel dx="1704" dy="939" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2876" dy="2298" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1055,279 +1055,89 @@
             <mxGeometry as="geometry" />
           </mxCell>
         </UserObject>
-        <UserObject label="Адміністратор" plantUmlId="n_0" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=3;strokeWidth=1.5;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" plantUmlBaseValue="Адміністратор" id="4GwSpu27koy7nXJlbT5l-2">
+        <UserObject label="Адміністратор" plantUmlId="n_0" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=3;strokeWidth=1.5;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" plantUmlBaseValue="Адміністратор" id="4GwSpu27koy7nXJlbT5l-115">
           <mxCell parent="4GwSpu27koy7nXJlbT5l-1" style="rounded=1;absoluteArcSize=1;arcSize=3;strokeWidth=1.5;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" vertex="1">
-            <mxGeometry height="49" width="141" x="271.3285714285714" y="30" as="geometry" />
+            <mxGeometry height="49" width="141" x="722.9985714285713" y="-1060" as="geometry" />
           </mxCell>
         </UserObject>
-        <UserObject label="Продавець" plantUmlId="n_1" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=3;strokeWidth=1.5;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" plantUmlBaseValue="Продавець" id="4GwSpu27koy7nXJlbT5l-3">
+        <UserObject label="Продавець" plantUmlId="n_1" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=3;strokeWidth=1.5;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" plantUmlBaseValue="Продавець" id="4GwSpu27koy7nXJlbT5l-116">
           <mxCell parent="4GwSpu27koy7nXJlbT5l-1" style="rounded=1;absoluteArcSize=1;arcSize=3;strokeWidth=1.5;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" vertex="1">
-            <mxGeometry height="49" width="110" x="447.3285714285714" y="30" as="geometry" />
+            <mxGeometry height="49" width="110" x="119.99857142857127" y="-770" as="geometry" />
           </mxCell>
         </UserObject>
-        <UserObject label="Покупець" plantUmlId="n_2" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=3;strokeWidth=1.5;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" plantUmlBaseValue="Покупець" id="4GwSpu27koy7nXJlbT5l-4">
+        <UserObject label="Покупець" plantUmlId="n_2" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=3;strokeWidth=1.5;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" plantUmlBaseValue="Покупець" id="4GwSpu27koy7nXJlbT5l-117">
           <mxCell parent="4GwSpu27koy7nXJlbT5l-1" style="rounded=1;absoluteArcSize=1;arcSize=3;strokeWidth=1.5;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" vertex="1">
-            <mxGeometry height="49" width="102" x="592.3285714285714" y="30" as="geometry" />
+            <mxGeometry height="49" width="102" x="319.9985714285714" y="-771.5" as="geometry" />
           </mxCell>
         </UserObject>
-        <UserObject label="Менеджер з постачання" plantUmlId="n_3" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=3;strokeWidth=1.5;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" plantUmlBaseValue="Менеджер з постачання" id="4GwSpu27koy7nXJlbT5l-5">
+        <UserObject label="Менеджер з постачання" plantUmlId="n_3" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=3;strokeWidth=1.5;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" plantUmlBaseValue="Менеджер з постачання" id="4GwSpu27koy7nXJlbT5l-118">
           <mxCell parent="4GwSpu27koy7nXJlbT5l-1" style="rounded=1;absoluteArcSize=1;arcSize=3;strokeWidth=1.5;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" vertex="1">
-            <mxGeometry height="49" width="197" x="832.9" y="30" as="geometry" />
+            <mxGeometry height="49" width="197" x="1430" y="-238" as="geometry" />
           </mxCell>
         </UserObject>
-        <UserObject label="Google OAuth" plantUmlId="n_4" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=3;strokeWidth=1.5;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" plantUmlBaseValue="Google OAuth" id="4GwSpu27koy7nXJlbT5l-6">
+        <UserObject label="Google OAuth" plantUmlId="n_4" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=3;strokeWidth=1.5;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" plantUmlBaseValue="Google OAuth" id="4GwSpu27koy7nXJlbT5l-119">
           <mxCell parent="4GwSpu27koy7nXJlbT5l-1" style="rounded=1;absoluteArcSize=1;arcSize=3;strokeWidth=1.5;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" vertex="1">
-            <mxGeometry height="49" width="123" x="30" y="277" as="geometry" />
+            <mxGeometry height="49" width="123" x="650" y="-770" as="geometry" />
           </mxCell>
         </UserObject>
-        <UserObject label="«process»&#xa;1.0&#xa;Автентифікація&#xa;та сесії" plantUmlId="n_5" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=25;strokeWidth=2;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" plantUmlBaseValue="«process»&#xa;1.0&#xa;Автентифікація&#xa;та сесії" id="4GwSpu27koy7nXJlbT5l-7">
+        <UserObject label="«process»&#xa;1.0&#xa;Автентифікація&#xa;та сесії" plantUmlId="n_5" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=25;strokeWidth=2;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" plantUmlBaseValue="«process»&#xa;1.0&#xa;Автентифікація&#xa;та сесії" id="4GwSpu27koy7nXJlbT5l-120">
           <mxCell parent="4GwSpu27koy7nXJlbT5l-1" style="rounded=1;absoluteArcSize=1;arcSize=25;strokeWidth=2;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" vertex="1">
-            <mxGeometry height="78" width="149" x="41.90000000000002" y="139" as="geometry" />
+            <mxGeometry height="78" width="149" x="719" y="-910" as="geometry" />
           </mxCell>
         </UserObject>
-        <UserObject label="«process»&#xa;2.0&#xa;Керування&#xa;користувачами" plantUmlId="n_6" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=25;strokeWidth=2;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" plantUmlBaseValue="«process»&#xa;2.0&#xa;Керування&#xa;користувачами" id="4GwSpu27koy7nXJlbT5l-8">
+        <UserObject label="«process»&#xa;2.0&#xa;Керування&#xa;користувачами" plantUmlId="n_6" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=25;strokeWidth=2;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" plantUmlBaseValue="«process»&#xa;2.0&#xa;Керування&#xa;користувачами" id="4GwSpu27koy7nXJlbT5l-121">
           <mxCell parent="4GwSpu27koy7nXJlbT5l-1" style="rounded=1;absoluteArcSize=1;arcSize=25;strokeWidth=2;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" vertex="1">
-            <mxGeometry height="78" width="141" x="225.90000000000003" y="139" as="geometry" />
+            <mxGeometry height="78" width="141" x="1039" y="-680" as="geometry" />
           </mxCell>
         </UserObject>
-        <UserObject label="«process»&#xa;3.0&#xa;Ведення каталогу&#xa;та облік смартфонів" plantUmlId="n_7" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=25;strokeWidth=2;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" plantUmlBaseValue="«process»&#xa;3.0&#xa;Ведення каталогу&#xa;та облік смартфонів" id="4GwSpu27koy7nXJlbT5l-9">
+        <UserObject label="«process»&#xa;3.0&#xa;Ведення каталогу&#xa;та облік смартфонів" plantUmlId="n_7" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=25;strokeWidth=2;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" plantUmlBaseValue="«process»&#xa;3.0&#xa;Ведення каталогу&#xa;та облік смартфонів" id="4GwSpu27koy7nXJlbT5l-122">
           <mxCell parent="4GwSpu27koy7nXJlbT5l-1" style="rounded=1;absoluteArcSize=1;arcSize=25;strokeWidth=2;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" vertex="1">
-            <mxGeometry height="78" width="181" x="401.9" y="139" as="geometry" />
+            <mxGeometry height="78" width="181" x="130" y="-910" as="geometry" />
           </mxCell>
         </UserObject>
-        <UserObject label="«process»&#xa;4.0&#xa;Опрацювання замовлень&#xa;та продаж" plantUmlId="n_8" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=25;strokeWidth=2;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" plantUmlBaseValue="«process»&#xa;4.0&#xa;Опрацювання замовлень&#xa;та продаж" id="4GwSpu27koy7nXJlbT5l-10">
+        <UserObject label="«process»&#xa;4.0&#xa;Опрацювання замовлень&#xa;та продаж" plantUmlId="n_8" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=25;strokeWidth=2;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" plantUmlBaseValue="«process»&#xa;4.0&#xa;Опрацювання замовлень&#xa;та продаж" id="4GwSpu27koy7nXJlbT5l-123">
           <mxCell parent="4GwSpu27koy7nXJlbT5l-1" style="rounded=1;absoluteArcSize=1;arcSize=25;strokeWidth=2;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" vertex="1">
-            <mxGeometry height="78" width="200" x="617.9" y="139" as="geometry" />
+            <mxGeometry height="78" width="200" x="188.5000000000001" y="-634" as="geometry" />
           </mxCell>
         </UserObject>
-        <UserObject label="«process»&#xa;5.0&#xa;Керування&#xa;постачальниками" plantUmlId="n_9" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=25;strokeWidth=2;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" plantUmlBaseValue="«process»&#xa;5.0&#xa;Керування&#xa;постачальниками" id="4GwSpu27koy7nXJlbT5l-11">
+        <UserObject label="«process»&#xa;5.0&#xa;Керування&#xa;постачальниками" plantUmlId="n_9" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=25;strokeWidth=2;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" plantUmlBaseValue="«process»&#xa;5.0&#xa;Керування&#xa;постачальниками" id="4GwSpu27koy7nXJlbT5l-124">
           <mxCell parent="4GwSpu27koy7nXJlbT5l-1" style="rounded=1;absoluteArcSize=1;arcSize=25;strokeWidth=2;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" vertex="1">
-            <mxGeometry height="78" width="157" x="852.9" y="139" as="geometry" />
+            <mxGeometry height="78" width="157" x="1450" y="-400" as="geometry" />
           </mxCell>
         </UserObject>
-        <UserObject label="«process»&#xa;6.0&#xa;Формування&#xa;аналітичних звітів" plantUmlId="n_10" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=25;strokeWidth=2;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" plantUmlBaseValue="«process»&#xa;6.0&#xa;Формування&#xa;аналітичних звітів" id="4GwSpu27koy7nXJlbT5l-12">
+        <UserObject label="«process»&#xa;6.0&#xa;Формування&#xa;аналітичних звітів" plantUmlId="n_10" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=25;strokeWidth=2;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" plantUmlBaseValue="«process»&#xa;6.0&#xa;Формування&#xa;аналітичних звітів" id="4GwSpu27koy7nXJlbT5l-125">
           <mxCell parent="4GwSpu27koy7nXJlbT5l-1" style="rounded=1;absoluteArcSize=1;arcSize=25;strokeWidth=2;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" vertex="1">
-            <mxGeometry height="78" width="177" x="298.43142857142857" y="386" as="geometry" />
+            <mxGeometry height="78" width="177" x="-129.99857142857144" y="-308" as="geometry" />
           </mxCell>
         </UserObject>
-        <UserObject label="«process»&#xa;7.0&#xa;Резервне копіювання&#xa;та експорт/імпорт" plantUmlId="n_11" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=25;strokeWidth=2;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" plantUmlBaseValue="«process»&#xa;7.0&#xa;Резервне копіювання&#xa;та експорт/імпорт" id="4GwSpu27koy7nXJlbT5l-13">
+        <UserObject label="«process»&#xa;7.0&#xa;Резервне копіювання&#xa;та експорт/імпорт" plantUmlId="n_11" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=25;strokeWidth=2;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" plantUmlBaseValue="«process»&#xa;7.0&#xa;Резервне копіювання&#xa;та експорт/імпорт" id="4GwSpu27koy7nXJlbT5l-126">
           <mxCell parent="4GwSpu27koy7nXJlbT5l-1" style="rounded=1;absoluteArcSize=1;arcSize=25;strokeWidth=2;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" vertex="1">
-            <mxGeometry height="78" width="185" x="510.43142857142857" y="386" as="geometry" />
+            <mxGeometry height="78" width="185" x="995.0014285714285" y="-440" as="geometry" />
           </mxCell>
         </UserObject>
-        <UserObject label="D1: Користувачі" plantUmlId="n_12" plantUmlBaseStyle="shape=cylinder3;size=10;boundedLbl=1;backgroundOutline=1;fillColor=#F1F1F1;strokeColor=#181818;fontSize=11;whiteSpace=wrap;shadow=0;strokeWidth=1.5;fontFamily=Arial;" plantUmlBaseValue="D1: Користувачі" id="4GwSpu27koy7nXJlbT5l-14">
+        <UserObject label="D1: Користувачі" plantUmlId="n_12" plantUmlBaseStyle="shape=cylinder3;size=10;boundedLbl=1;backgroundOutline=1;fillColor=#F1F1F1;strokeColor=#181818;fontSize=11;whiteSpace=wrap;shadow=0;strokeWidth=1.5;fontFamily=Arial;" plantUmlBaseValue="D1: Користувачі" id="4GwSpu27koy7nXJlbT5l-127">
           <mxCell parent="4GwSpu27koy7nXJlbT5l-1" style="shape=cylinder3;size=10;boundedLbl=1;backgroundOutline=1;fillColor=#F1F1F1;strokeColor=#181818;fontSize=11;whiteSpace=wrap;shadow=0;strokeWidth=1.5;fontFamily=Arial;" vertex="1">
-            <mxGeometry height="46" width="130" x="188" y="278.5" as="geometry" />
+            <mxGeometry height="46" width="130" x="840" y="-770" as="geometry" />
           </mxCell>
         </UserObject>
-        <UserObject label="D2: Товари (Смартфони)" plantUmlId="n_13" plantUmlBaseStyle="shape=cylinder3;size=10;boundedLbl=1;backgroundOutline=1;fillColor=#F1F1F1;strokeColor=#181818;fontSize=11;whiteSpace=wrap;shadow=0;strokeWidth=1.5;fontFamily=Arial;" plantUmlBaseValue="D2: Товари (Смартфони)" id="4GwSpu27koy7nXJlbT5l-15">
+        <UserObject label="D2: Товари (Смартфони)" plantUmlId="n_13" plantUmlBaseStyle="shape=cylinder3;size=10;boundedLbl=1;backgroundOutline=1;fillColor=#F1F1F1;strokeColor=#181818;fontSize=11;whiteSpace=wrap;shadow=0;strokeWidth=1.5;fontFamily=Arial;" plantUmlBaseValue="D2: Товари (Смартфони)" id="4GwSpu27koy7nXJlbT5l-128">
           <mxCell parent="4GwSpu27koy7nXJlbT5l-1" style="shape=cylinder3;size=10;boundedLbl=1;backgroundOutline=1;fillColor=#F1F1F1;strokeColor=#181818;fontSize=11;whiteSpace=wrap;shadow=0;strokeWidth=1.5;fontFamily=Arial;" vertex="1">
-            <mxGeometry height="46" width="174" x="469.9" y="278.5" as="geometry" />
+            <mxGeometry height="46" width="174" x="-44" y="-470" as="geometry" />
           </mxCell>
         </UserObject>
-        <UserObject label="D3: Продажі (Чеки)" plantUmlId="n_14" plantUmlBaseStyle="shape=cylinder3;size=10;boundedLbl=1;backgroundOutline=1;fillColor=#F1F1F1;strokeColor=#181818;fontSize=11;whiteSpace=wrap;shadow=0;strokeWidth=1.5;fontFamily=Arial;" plantUmlBaseValue="D3: Продажі (Чеки)" id="4GwSpu27koy7nXJlbT5l-16">
+        <UserObject label="D3: Продажі (Чеки)" plantUmlId="n_14" plantUmlBaseStyle="shape=cylinder3;size=10;boundedLbl=1;backgroundOutline=1;fillColor=#F1F1F1;strokeColor=#181818;fontSize=11;whiteSpace=wrap;shadow=0;strokeWidth=1.5;fontFamily=Arial;" plantUmlBaseValue="D3: Продажі (Чеки)" id="4GwSpu27koy7nXJlbT5l-129">
           <mxCell parent="4GwSpu27koy7nXJlbT5l-1" style="shape=cylinder3;size=10;boundedLbl=1;backgroundOutline=1;fillColor=#F1F1F1;strokeColor=#181818;fontSize=11;whiteSpace=wrap;shadow=0;strokeWidth=1.5;fontFamily=Arial;" vertex="1">
-            <mxGeometry height="46" width="142" x="678.9" y="278.5" as="geometry" />
+            <mxGeometry height="46" width="142" x="217.5000000000001" y="-470" as="geometry" />
           </mxCell>
         </UserObject>
-        <UserObject label="D4: Постачальники" plantUmlId="n_15" plantUmlBaseStyle="shape=cylinder3;size=10;boundedLbl=1;backgroundOutline=1;fillColor=#F1F1F1;strokeColor=#181818;fontSize=11;whiteSpace=wrap;shadow=0;strokeWidth=1.5;fontFamily=Arial;" plantUmlBaseValue="D4: Постачальники" id="4GwSpu27koy7nXJlbT5l-17">
+        <UserObject label="D4: Постачальники" plantUmlId="n_15" plantUmlBaseStyle="shape=cylinder3;size=10;boundedLbl=1;backgroundOutline=1;fillColor=#F1F1F1;strokeColor=#181818;fontSize=11;whiteSpace=wrap;shadow=0;strokeWidth=1.5;fontFamily=Arial;" plantUmlBaseValue="D4: Постачальники" id="4GwSpu27koy7nXJlbT5l-130">
           <mxCell parent="4GwSpu27koy7nXJlbT5l-1" style="shape=cylinder3;size=10;boundedLbl=1;backgroundOutline=1;fillColor=#F1F1F1;strokeColor=#181818;fontSize=11;whiteSpace=wrap;shadow=0;strokeWidth=1.5;fontFamily=Arial;" vertex="1">
-            <mxGeometry height="46" width="145" x="858.9" y="278.5" as="geometry" />
+            <mxGeometry height="46" width="145" x="1450" y="-530" as="geometry" />
           </mxCell>
         </UserObject>
-        <UserObject label="D5: Резервні копії" plantUmlId="n_16" plantUmlBaseStyle="shape=cylinder3;size=10;boundedLbl=1;backgroundOutline=1;fillColor=#F1F1F1;strokeColor=#181818;fontSize=11;whiteSpace=wrap;shadow=0;strokeWidth=1.5;fontFamily=Arial;" plantUmlBaseValue="D5: Резервні копії" id="4GwSpu27koy7nXJlbT5l-18">
+        <UserObject label="D5: Резервні копії" plantUmlId="n_16" plantUmlBaseStyle="shape=cylinder3;size=10;boundedLbl=1;backgroundOutline=1;fillColor=#F1F1F1;strokeColor=#181818;fontSize=11;whiteSpace=wrap;shadow=0;strokeWidth=1.5;fontFamily=Arial;" plantUmlBaseValue="D5: Резервні копії" id="4GwSpu27koy7nXJlbT5l-131">
           <mxCell parent="4GwSpu27koy7nXJlbT5l-1" style="shape=cylinder3;size=10;boundedLbl=1;backgroundOutline=1;fillColor=#F1F1F1;strokeColor=#181818;fontSize=11;whiteSpace=wrap;shadow=0;strokeWidth=1.5;fontFamily=Arial;" vertex="1">
-            <mxGeometry height="46" width="150" x="527.9314285714286" y="524" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Запит входу" plantUmlId="e_17" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=0;exitY=0.32;exitDx=0;exitDy=0;entryX=1;entryY=0.32;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Запит входу" id="4GwSpu27koy7nXJlbT5l-19">
-          <mxCell edge="1" parent="4GwSpu27koy7nXJlbT5l-1" source="4GwSpu27koy7nXJlbT5l-2" style="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=0;exitY=0.32;exitDx=0;exitDy=0;entryX=1;entryY=0.32;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="4GwSpu27koy7nXJlbT5l-7">
-            <mxGeometry relative="1" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Запит токена" plantUmlId="e_18" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=0.32;exitY=1;exitDx=0;exitDy=0;entryX=0.32;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Запит токена" id="4GwSpu27koy7nXJlbT5l-20">
-          <mxCell edge="1" parent="4GwSpu27koy7nXJlbT5l-1" source="4GwSpu27koy7nXJlbT5l-7" style="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=0.32;exitY=1;exitDx=0;exitDy=0;entryX=0.32;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="4GwSpu27koy7nXJlbT5l-6">
-            <mxGeometry relative="1" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Токен" plantUmlId="e_19" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=0.68;exitY=0;exitDx=0;exitDy=0;entryX=0.68;entryY=1;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Токен" id="4GwSpu27koy7nXJlbT5l-21">
-          <mxCell edge="1" parent="4GwSpu27koy7nXJlbT5l-1" source="4GwSpu27koy7nXJlbT5l-6" style="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=0.68;exitY=0;exitDx=0;exitDy=0;entryX=0.68;entryY=1;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="4GwSpu27koy7nXJlbT5l-7">
-            <mxGeometry relative="1" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Перевірка ролі" plantUmlId="e_20" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Перевірка ролі" id="4GwSpu27koy7nXJlbT5l-22">
-          <mxCell edge="1" parent="4GwSpu27koy7nXJlbT5l-1" source="4GwSpu27koy7nXJlbT5l-7" style="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="4GwSpu27koy7nXJlbT5l-14">
-            <mxGeometry relative="1" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Сесія" plantUmlId="e_21" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=1;exitY=0.68;exitDx=0;exitDy=0;entryX=0;entryY=0.68;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Сесія" id="4GwSpu27koy7nXJlbT5l-23">
-          <mxCell edge="1" parent="4GwSpu27koy7nXJlbT5l-1" source="4GwSpu27koy7nXJlbT5l-7" style="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=1;exitY=0.68;exitDx=0;exitDy=0;entryX=0;entryY=0.68;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="4GwSpu27koy7nXJlbT5l-2">
-            <mxGeometry relative="1" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Дані корист." plantUmlId="e_22" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=0.32;exitY=1;exitDx=0;exitDy=0;entryX=0.32;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Дані корист." id="4GwSpu27koy7nXJlbT5l-24">
-          <mxCell edge="1" parent="4GwSpu27koy7nXJlbT5l-1" source="4GwSpu27koy7nXJlbT5l-2" style="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=0.32;exitY=1;exitDx=0;exitDy=0;entryX=0.32;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="4GwSpu27koy7nXJlbT5l-8">
-            <mxGeometry relative="1" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Запис" plantUmlId="e_23" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=0.32;exitY=1;exitDx=0;exitDy=0;entryX=0.32;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Запис" id="4GwSpu27koy7nXJlbT5l-25">
-          <mxCell edge="1" parent="4GwSpu27koy7nXJlbT5l-1" source="4GwSpu27koy7nXJlbT5l-8" style="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=0.32;exitY=1;exitDx=0;exitDy=0;entryX=0.32;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="4GwSpu27koy7nXJlbT5l-14">
-            <mxGeometry relative="1" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Дані корист." plantUmlId="e_24" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=0.68;exitY=0;exitDx=0;exitDy=0;entryX=0.68;entryY=1;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Дані корист." id="4GwSpu27koy7nXJlbT5l-26">
-          <mxCell edge="1" parent="4GwSpu27koy7nXJlbT5l-1" source="4GwSpu27koy7nXJlbT5l-14" style="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=0.68;exitY=0;exitDx=0;exitDy=0;entryX=0.68;entryY=1;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="4GwSpu27koy7nXJlbT5l-8">
-            <mxGeometry relative="1" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Список" plantUmlId="e_25" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=0.68;exitY=0;exitDx=0;exitDy=0;entryX=0.68;entryY=1;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Список" id="4GwSpu27koy7nXJlbT5l-27">
-          <mxCell edge="1" parent="4GwSpu27koy7nXJlbT5l-1" source="4GwSpu27koy7nXJlbT5l-8" style="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=0.68;exitY=0;exitDx=0;exitDy=0;entryX=0.68;entryY=1;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="4GwSpu27koy7nXJlbT5l-2">
-            <mxGeometry relative="1" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Додавання" plantUmlId="e_26" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Додавання" id="4GwSpu27koy7nXJlbT5l-28">
-          <mxCell edge="1" parent="4GwSpu27koy7nXJlbT5l-1" source="4GwSpu27koy7nXJlbT5l-2" style="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="4GwSpu27koy7nXJlbT5l-9">
-            <mxGeometry relative="1" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Пошук" plantUmlId="e_27" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=0;exitY=0.32;exitDx=0;exitDy=0;entryX=1;entryY=0.32;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Пошук" id="4GwSpu27koy7nXJlbT5l-29">
-          <mxCell edge="1" parent="4GwSpu27koy7nXJlbT5l-1" source="4GwSpu27koy7nXJlbT5l-4" style="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=0;exitY=0.32;exitDx=0;exitDy=0;entryX=1;entryY=0.32;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="4GwSpu27koy7nXJlbT5l-9">
-            <mxGeometry relative="1" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Перевірка IMEI" plantUmlId="e_28" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=0.32;exitY=1;exitDx=0;exitDy=0;entryX=0.32;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Перевірка IMEI" id="4GwSpu27koy7nXJlbT5l-30">
-          <mxCell edge="1" parent="4GwSpu27koy7nXJlbT5l-1" source="4GwSpu27koy7nXJlbT5l-3" style="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=0.32;exitY=1;exitDx=0;exitDy=0;entryX=0.32;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="4GwSpu27koy7nXJlbT5l-9">
-            <mxGeometry relative="1" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Збереження" plantUmlId="e_29" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=0.32;exitY=1;exitDx=0;exitDy=0;entryX=0.32;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Збереження" id="4GwSpu27koy7nXJlbT5l-31">
-          <mxCell edge="1" parent="4GwSpu27koy7nXJlbT5l-1" source="4GwSpu27koy7nXJlbT5l-9" style="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=0.32;exitY=1;exitDx=0;exitDy=0;entryX=0.32;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="4GwSpu27koy7nXJlbT5l-15">
-            <mxGeometry relative="1" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Інфо про товари" plantUmlId="e_30" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=0.68;exitY=0;exitDx=0;exitDy=0;entryX=0.68;entryY=1;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Інфо про товари" id="4GwSpu27koy7nXJlbT5l-32">
-          <mxCell edge="1" parent="4GwSpu27koy7nXJlbT5l-1" source="4GwSpu27koy7nXJlbT5l-15" style="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=0.68;exitY=0;exitDx=0;exitDy=0;entryX=0.68;entryY=1;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="4GwSpu27koy7nXJlbT5l-9">
-            <mxGeometry relative="1" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Результати" plantUmlId="e_31" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=1;exitY=0.68;exitDx=0;exitDy=0;entryX=0;entryY=0.68;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Результати" id="4GwSpu27koy7nXJlbT5l-33">
-          <mxCell edge="1" parent="4GwSpu27koy7nXJlbT5l-1" source="4GwSpu27koy7nXJlbT5l-9" style="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=1;exitY=0.68;exitDx=0;exitDy=0;entryX=0;entryY=0.68;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="4GwSpu27koy7nXJlbT5l-4">
-            <mxGeometry relative="1" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Інфо про товар" plantUmlId="e_32" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=0.68;exitY=0;exitDx=0;exitDy=0;entryX=0.68;entryY=1;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Інфо про товар" id="4GwSpu27koy7nXJlbT5l-34">
-          <mxCell edge="1" parent="4GwSpu27koy7nXJlbT5l-1" source="4GwSpu27koy7nXJlbT5l-9" style="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=0.68;exitY=0;exitDx=0;exitDy=0;entryX=0.68;entryY=1;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="4GwSpu27koy7nXJlbT5l-3">
-            <mxGeometry relative="1" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Замовлення" plantUmlId="e_33" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Замовлення" id="4GwSpu27koy7nXJlbT5l-35">
-          <mxCell edge="1" parent="4GwSpu27koy7nXJlbT5l-1" source="4GwSpu27koy7nXJlbT5l-4" style="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="4GwSpu27koy7nXJlbT5l-10">
-            <mxGeometry relative="1" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Оформлення" plantUmlId="e_34" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=1;exitY=0.32;exitDx=0;exitDy=0;entryX=0;entryY=0.32;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Оформлення" id="4GwSpu27koy7nXJlbT5l-36">
-          <mxCell edge="1" parent="4GwSpu27koy7nXJlbT5l-1" source="4GwSpu27koy7nXJlbT5l-3" style="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=1;exitY=0.32;exitDx=0;exitDy=0;entryX=0;entryY=0.32;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="4GwSpu27koy7nXJlbT5l-10">
-            <mxGeometry relative="1" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Статус «проданий»" plantUmlId="e_35" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Статус «проданий»" id="4GwSpu27koy7nXJlbT5l-37">
-          <mxCell edge="1" parent="4GwSpu27koy7nXJlbT5l-1" source="4GwSpu27koy7nXJlbT5l-10" style="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="4GwSpu27koy7nXJlbT5l-15">
-            <mxGeometry relative="1" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Запис продажу" plantUmlId="e_36" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Запис продажу" id="4GwSpu27koy7nXJlbT5l-38">
-          <mxCell edge="1" parent="4GwSpu27koy7nXJlbT5l-1" source="4GwSpu27koy7nXJlbT5l-10" style="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="4GwSpu27koy7nXJlbT5l-16">
-            <mxGeometry relative="1" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Підтвердження" plantUmlId="e_37" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=0;exitY=0.68;exitDx=0;exitDy=0;entryX=1;entryY=0.68;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Підтвердження" id="4GwSpu27koy7nXJlbT5l-39">
-          <mxCell edge="1" parent="4GwSpu27koy7nXJlbT5l-1" source="4GwSpu27koy7nXJlbT5l-10" style="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=0;exitY=0.68;exitDx=0;exitDy=0;entryX=1;entryY=0.68;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="4GwSpu27koy7nXJlbT5l-3">
-            <mxGeometry relative="1" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Дані постач." plantUmlId="e_38" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=0.32;exitY=1;exitDx=0;exitDy=0;entryX=0.32;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Дані постач." id="4GwSpu27koy7nXJlbT5l-40">
-          <mxCell edge="1" parent="4GwSpu27koy7nXJlbT5l-1" source="4GwSpu27koy7nXJlbT5l-5" style="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=0.32;exitY=1;exitDx=0;exitDy=0;entryX=0.32;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="4GwSpu27koy7nXJlbT5l-11">
-            <mxGeometry relative="1" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Збереження" plantUmlId="e_39" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=0.32;exitY=1;exitDx=0;exitDy=0;entryX=0.32;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Збереження" id="4GwSpu27koy7nXJlbT5l-41">
-          <mxCell edge="1" parent="4GwSpu27koy7nXJlbT5l-1" source="4GwSpu27koy7nXJlbT5l-11" style="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=0.32;exitY=1;exitDx=0;exitDy=0;entryX=0.32;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="4GwSpu27koy7nXJlbT5l-17">
-            <mxGeometry relative="1" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Відомості" plantUmlId="e_40" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=0.68;exitY=0;exitDx=0;exitDy=0;entryX=0.68;entryY=1;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Відомості" id="4GwSpu27koy7nXJlbT5l-42">
-          <mxCell edge="1" parent="4GwSpu27koy7nXJlbT5l-1" source="4GwSpu27koy7nXJlbT5l-17" style="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=0.68;exitY=0;exitDx=0;exitDy=0;entryX=0.68;entryY=1;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="4GwSpu27koy7nXJlbT5l-11">
-            <mxGeometry relative="1" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Список" plantUmlId="e_41" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=0.68;exitY=0;exitDx=0;exitDy=0;entryX=0.68;entryY=1;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Список" id="4GwSpu27koy7nXJlbT5l-43">
-          <mxCell edge="1" parent="4GwSpu27koy7nXJlbT5l-1" source="4GwSpu27koy7nXJlbT5l-11" style="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=0.68;exitY=0;exitDx=0;exitDy=0;entryX=0.68;entryY=1;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="4GwSpu27koy7nXJlbT5l-5">
-            <mxGeometry relative="1" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Запит звіту" plantUmlId="e_42" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=0.32;exitY=1;exitDx=0;exitDy=0;entryX=0.32;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Запит звіту" id="4GwSpu27koy7nXJlbT5l-44">
-          <mxCell edge="1" parent="4GwSpu27koy7nXJlbT5l-1" source="4GwSpu27koy7nXJlbT5l-2" style="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=0.32;exitY=1;exitDx=0;exitDy=0;entryX=0.32;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="4GwSpu27koy7nXJlbT5l-12">
-            <mxGeometry relative="1" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Залишки" plantUmlId="e_43" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Залишки" id="4GwSpu27koy7nXJlbT5l-45">
-          <mxCell edge="1" parent="4GwSpu27koy7nXJlbT5l-1" source="4GwSpu27koy7nXJlbT5l-15" style="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="4GwSpu27koy7nXJlbT5l-12">
-            <mxGeometry relative="1" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Виручка" plantUmlId="e_44" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Виручка" id="4GwSpu27koy7nXJlbT5l-46">
-          <mxCell edge="1" parent="4GwSpu27koy7nXJlbT5l-1" source="4GwSpu27koy7nXJlbT5l-16" style="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="4GwSpu27koy7nXJlbT5l-12">
-            <mxGeometry relative="1" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Дашборд" plantUmlId="e_45" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=12;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Дашборд" id="4GwSpu27koy7nXJlbT5l-47">
-          <mxCell edge="1" parent="4GwSpu27koy7nXJlbT5l-1" source="4GwSpu27koy7nXJlbT5l-12" style="strokeColor=#181818;fontColor=#000000;fontSize=12;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="4GwSpu27koy7nXJlbT5l-2">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1057.9" y="425" />
-                <mxPoint x="1057.9" y="55" />
-              </Array>
-            </mxGeometry>
-          </mxCell>
-        </UserObject>
-        <UserObject label="Експорт / імпорт" plantUmlId="e_46" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=0.32;exitY=1;exitDx=0;exitDy=0;entryX=0.32;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Експорт / імпорт" id="4GwSpu27koy7nXJlbT5l-48">
-          <mxCell edge="1" parent="4GwSpu27koy7nXJlbT5l-1" source="4GwSpu27koy7nXJlbT5l-2" style="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=0.32;exitY=1;exitDx=0;exitDy=0;entryX=0.32;entryY=0;entryDx=0;entryDy=0;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="4GwSpu27koy7nXJlbT5l-13">
-            <mxGeometry relative="1" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Експорт D1" plantUmlId="e_47" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Експорт D1" id="4GwSpu27koy7nXJlbT5l-49">
-          <mxCell edge="1" parent="4GwSpu27koy7nXJlbT5l-1" source="4GwSpu27koy7nXJlbT5l-14" style="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="4GwSpu27koy7nXJlbT5l-13">
-            <mxGeometry relative="1" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Експорт D2" plantUmlId="e_48" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Експорт D2" id="4GwSpu27koy7nXJlbT5l-50">
-          <mxCell edge="1" parent="4GwSpu27koy7nXJlbT5l-1" source="4GwSpu27koy7nXJlbT5l-15" style="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="4GwSpu27koy7nXJlbT5l-13">
-            <mxGeometry relative="1" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Експорт D3" plantUmlId="e_49" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Експорт D3" id="4GwSpu27koy7nXJlbT5l-51">
-          <mxCell edge="1" parent="4GwSpu27koy7nXJlbT5l-1" source="4GwSpu27koy7nXJlbT5l-16" style="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="4GwSpu27koy7nXJlbT5l-13">
-            <mxGeometry relative="1" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Експорт D4" plantUmlId="e_50" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Експорт D4" id="4GwSpu27koy7nXJlbT5l-52">
-          <mxCell edge="1" parent="4GwSpu27koy7nXJlbT5l-1" source="4GwSpu27koy7nXJlbT5l-17" style="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="4GwSpu27koy7nXJlbT5l-13">
-            <mxGeometry relative="1" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Бекап" plantUmlId="e_51" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Бекап" id="4GwSpu27koy7nXJlbT5l-53">
-          <mxCell edge="1" parent="4GwSpu27koy7nXJlbT5l-1" source="4GwSpu27koy7nXJlbT5l-13" style="strokeColor=#181818;fontColor=#000000;fontSize=10;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;fontFamily=Arial;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="4GwSpu27koy7nXJlbT5l-18">
-            <mxGeometry relative="1" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="JSON / статус" plantUmlId="e_52" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=12;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="JSON / статус" id="4GwSpu27koy7nXJlbT5l-54">
-          <mxCell edge="1" parent="4GwSpu27koy7nXJlbT5l-1" source="4GwSpu27koy7nXJlbT5l-13" style="strokeColor=#181818;fontColor=#000000;fontSize=12;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="4GwSpu27koy7nXJlbT5l-2">
-            <mxGeometry relative="1" as="geometry">
-              <Array as="points">
-                <mxPoint x="1057.9" y="425" />
-                <mxPoint x="1057.9" y="55" />
-              </Array>
-            </mxGeometry>
+            <mxGeometry height="46" width="150" x="980.0014285714285" y="-260" as="geometry" />
           </mxCell>
         </UserObject>
       </root>
