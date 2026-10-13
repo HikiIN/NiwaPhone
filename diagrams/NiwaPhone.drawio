@@ -1112,9 +1112,16 @@
             <mxGeometry height="78" width="157" x="1450" y="-400" as="geometry" />
           </mxCell>
         </UserObject>
+        <mxCell id="4GwSpu27koy7nXJlbT5l-170" edge="1" parent="4GwSpu27koy7nXJlbT5l-1" source="4GwSpu27koy7nXJlbT5l-125" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="4GwSpu27koy7nXJlbT5l-115">
+          <mxGeometry relative="1" x="-0.0084" as="geometry">
+            <Array as="points">
+              <mxPoint x="-60" y="-1035.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
         <UserObject label="«process»&#xa;6.0&#xa;Формування&#xa;аналітичних звітів" plantUmlId="n_10" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=25;strokeWidth=2;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" plantUmlBaseValue="«process»&#xa;6.0&#xa;Формування&#xa;аналітичних звітів" id="4GwSpu27koy7nXJlbT5l-125">
           <mxCell parent="4GwSpu27koy7nXJlbT5l-1" style="rounded=1;absoluteArcSize=1;arcSize=25;strokeWidth=2;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" vertex="1">
-            <mxGeometry height="78" width="177" x="-129.99857142857144" y="-308" as="geometry" />
+            <mxGeometry height="78" width="177" x="-176.99857142857144" y="-308" as="geometry" />
           </mxCell>
         </UserObject>
         <UserObject label="«process»&#xa;7.0&#xa;Резервне копіювання&#xa;та експорт/імпорт" plantUmlId="n_11" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=25;strokeWidth=2;fillColor=#F1F1F1;strokeColor=#181818;whiteSpace=wrap;shadow=0;fontSize=11;fontFamily=Arial;" plantUmlBaseValue="«process»&#xa;7.0&#xa;Резервне копіювання&#xa;та експорт/імпорт" id="4GwSpu27koy7nXJlbT5l-126">
