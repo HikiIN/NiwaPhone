@@ -988,12 +988,12 @@
     </mxGraphModel>
   </diagram>
   <diagram id="QHBHg1_QonXzQrii3pJ7" name="КПЗ-4.1">
-    <mxGraphModel dx="1178" dy="626" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1414" dy="779" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="20XBdScIj3GXCPJMjAFT-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;" value="" vertex="1">
-          <mxGeometry height="420" width="670" x="70" y="380" as="geometry" />
+          <mxGeometry height="425" width="690" x="60" y="375" as="geometry" />
         </mxCell>
         <mxCell id="hcsM6fwx1em2C61tyNiA-1" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="ExportContext" vertex="1">
           <mxGeometry height="120" width="250" x="280" y="390" as="geometry" />
