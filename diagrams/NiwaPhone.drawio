@@ -1054,7 +1054,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="Q-yG_DsNlYyUZdbKgsIr" name="АППЗ-3.1">
-    <mxGraphModel dx="3773" dy="1623" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="3265" dy="1343" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1065,7 +1065,7 @@
         </UserObject>
         <UserObject label="Межові класи («boundary»)" plantUmlId="pkg_0" plantUmlBaseStyle="shape=folder;tabWidth=182;tabHeight=24;tabPosition=left;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;fontStyle=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=1;container=1;collapsible=0;rounded=0;shadow=0;fontFamily=Arial;" plantUmlBaseValue="Межові класи («boundary»)" id="tSd7SuIiUJvj6QPPeI0u-2">
           <mxCell parent="tSd7SuIiUJvj6QPPeI0u-1" style="shape=folder;tabWidth=182;tabHeight=24;tabPosition=left;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=12;fontStyle=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=1;container=1;collapsible=0;rounded=0;shadow=0;fontFamily=Arial;" vertex="1">
-            <mxGeometry height="677.43" width="349.23" x="30" y="30" as="geometry" />
+            <mxGeometry height="677.43" width="349.23" x="-310" y="210" as="geometry" />
           </mxCell>
         </UserObject>
         <UserObject label="СторінкаКаталогу" plantUmlId="cls_5" plantUmlBaseStyle="swimlane;collapsible=0;fontStyle=0;align=center;fontSize=12;fontColor=#000000;startSize=32;spacingLeft=25;fillColor=#FFFFFF;strokeColor=#000000;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;marginBottom=0;stackSpacing=0;marginTop=4;rounded=0;shadow=0;fontFamily=Arial;swimlaneFillColor=#FFFFFF;" plantUmlBaseValue="СторінкаКаталогу" id="tSd7SuIiUJvj6QPPeI0u-3">
